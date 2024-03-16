@@ -1,0 +1,4 @@
+\babel@toc {slovene}{}
+\beamer@sectionintoc {1}{Zakon ene cene in arbitra\v zna strategija}{5}{0}{1}
+\beamer@sectionintoc {2}{Terminski posli}{25}{0}{2}
+\beamer@sectionintoc {3}{Opcije}{79}{0}{3}
