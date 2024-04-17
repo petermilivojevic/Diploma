@@ -1,0 +1,361 @@
+\documentclass[12pt, hyperref={unicode}]{beamer}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[slovene]{babel}
+
+\usepackage{pgfpages}
+\usepackage{bookmark}
+\usepackage{graphicx}%za vstavljanje slik
+\usepackage{array}%za tabele
+\usepackage{enumerate}
+\usepackage{lmodern}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+
+
+\mode<presentation>
+
+%tema
+\usetheme{Berlin}
+\usecolortheme{default}
+\useinnertheme[shadows]{rounded}
+\useoutertheme{infolines}
+\setbeamertemplate{navigation symbols}{}
+\beamertemplatenavigationsymbolsempty
+
+%pisava
+\usepackage{palatino}
+\usefonttheme{serif}
+%serif doda podaljšane črtice pri I
+
+\newtheorem{definicija}{Definicija}
+\newtheorem{izrek}{Izrek}
+\newtheorem{trditev}{Trditev}
+\newtheorem{posledica}{Posledica}
+\newtheorem{lema}{Lema}
+\newtheorem{dokaz}{Dokaz}
+\newtheorem{domneva}{Domneva}
+
+
+\title{(Osnovne) Igre ustvarjanja omrežja}
+\subtitle{Kratka predstavitev diplome}
+\author{Peter Milivojević}
+\institute[FMF]{Fakulteta za matematiko in fiziko}
+\date{11. \ januar \ 2024}
+
+\begin{document}
+
+% ===================================================================
+\begin{frame}
+    \titlepage
+\end{frame}
+% -------------------------------------------------------------------
+
+
+% -------------------------------------------------------------------
+\begin{frame}
+   
+  \frametitle{(Osnovne) Igre ustvarjanja omrežja}
+  Omrežje lahko ustvarimo na več načinov in pri različnih optimizacijskih pogojih.
+  Omrežje lahko ustvari centralna avtoriteta in tako doseže socialni optimum ali pa
+  več sebičnih igralcev, kjer vsak poskuša doseči svoj sebični optimum v dani situaciji.
+  V diplomski nalogi se bom pretežno ukvarjal z dvema verzijama osnovnih iger ustvarjanja omrežja:
+  \vspace{1mm}
+  \begin{itemize}
+    \item Maksimalna oddaljenos
+    \item Vsota oddaljenosti oz. povprečna oddaljenost
+  \end{itemize}
+
+\end{frame}
+% -------------------------------------------------------------------
+
+% -------------------------------------------------------------------
+\begin{frame}
+   
+    \frametitle{Uporabne definicije}
+    \begin{definicija}
+    $Graf$ je urejen par G = (V, E), kjer je V neprazna množica točk grafa G in E množica povezav grafa G, pričemer je vsaka povezava par točk.
+    \end{definicija}
+
+    \begin{definicija}
+    $Graf$ G je povezan, če za vsak par voclišč $u, v \in V(G)$ obstaja pot od $u$ do $v$.
+    \end{definicija}
+
+\end{frame}
+% -------------------------------------------------------------------
+
+% -------------------------------------------------------------------
+\begin{frame}
+   
+    \frametitle{Uporabne definicije}
+    \begin{definicija}
+    Naj bo $G$ povezan graf in $v \in V(G)$. Stopnja točke $v$ je enaka vsoti števila povezav, ki imajo to točko za krajišče (in dvojnega števila zank v tej točki).
+    Označimo jo z $deg(v)$.
+    \end{definicija}
+    
+    \begin{definicija}
+    Naj bo $G$ povezan graf in $u, v \in V(G)$. Razdalja $d(u, v)$ je dolžina najkrajše poti med vozliščema $u$ in $v$ (t.j. razdalja med $u$ in $v$) v grafu $G$.
+    \end{definicija}
+
+\end{frame}
+% -------------------------------------------------------------------
+
+% -------------------------------------------------------------------
+\begin{frame}
+   
+    \frametitle{Uporabne definicije}
+    \begin{definicija}
+    Naj bo $G$ povezan graf. Premer grafa $G$ je definiran kot $\text{diam}(G) = \max_{u, v \in V(G)} d(u, v)$, kjer je $d(u, v)$ razdalja med vozliščema $u$ in $v$ v grafu $G$.
+    \end{definicija}
+    
+    \begin{definicija}
+    Naj bo $G$ povezan graf. Lokalni premer točke $v$ grafa $G$ je definiran kot $\text{diam}(G) = \max_{u \in V(G)} d(u, v)$, kjer je $d(u, v)$ razdalja med vozliščema $u$ in $v$ v grafu $G$.
+    \end{definicija}
+    
+    \begin{definicija}
+    Povezan graf $G$ ima prerezno vozlišče $v$, če graf $G - v$ ni povezan.
+    \end{definicija}
+
+\end{frame}
+% -------------------------------------------------------------------
+
+% -------------------------------------------------------------------
+\begin{frame}
+   
+    \frametitle{Uporabne definicije}
+    \begin{definicija}
+    Povezanost po povezavah $\lambda(G)$ povezanega grafa $G$ je najmanjše število povezav,
+    z odstranitvijo katerih postane graf $G$ nepovezan. Če je $\lambda(G) \geq k$,
+    je graf $G$ po povezavah $k$-povezan.
+    \end{definicija}
+
+    \begin{definicija}
+    Naj bo $G$ povezan graf z n vozlišči. Weinerjev indeks $W = W(G)$ je definiran
+    kot vsota vseh razdalj med vozlišči.
+    $$W(G) = \sum_{i=1}^{n} \sum_{j=1}^{i} d_{ij} = \frac{1}{2} \sum_{i=1}^{n} \sum_{j=1}^{n} d_{ij}$$
+    kjer $d_{ij}$ označuje dolžino najkrajše poti med vozliščem $i$ in $j$.
+    \end{definicija}
+
+\end{frame}
+% -------------------------------------------------------------------
+
+% -------------------------------------------------------------------
+\begin{frame}
+   
+    \frametitle{Definiciji ravnovesja}
+    \begin{definicija}
+    Graf je v \textit{ravnotežju glede na vsoto razdalj}, če za vsako povezavo $vw$ in
+    za vsako vozlišče $w'$ zamenjava povezave $vw$ z povezavo $vw'$ ne zmanjša
+    celotne vsote razdalj od vozlišča $v$ do vseh ostalih vozlišč.
+    \end{definicija}
+        
+    \begin{definicija}
+    Graf je v \textit{ravnotežju glede na maksimalno razdaljo}, če za vsako povezavo $vw$
+    in za vsako vozlišče $w'$ zamenjava povezave $vw$ z povezavo $vw'$ ne zmanjša
+    lokalnega premera vozlišča $v$. Nadalje odstranitev povezave $vw$ poveča
+    lokalni premer vozlišča $v$.
+    \end{definicija}
+
+\end{frame}
+% -------------------------------------------------------------------
+
+% -------------------------------------------------------------------
+\begin{frame}
+   
+    \frametitle{Kritičnost in stabilnost}  
+    \begin{definicija}
+    Naj bo $G$ povezan graf. Graf $G$ je \textit{kritičen za odstranitev povezave},
+    če odstranitev katere koli povezave $uv \in E(G)$ poveča lokalni premer vozlišča $v$ in vozlišča $u$.
+    \end{definicija}
+    
+    \begin{definicija}
+    Naj bo $G$ povezan graf. Graf $G$ je \textit{stabilen za dodajanje povezave},
+    če dodajanje katere koli povezave $uv \in E(G)$ ne zmanjša lokalnega premera vozlišča $v$ in vozlišča $u$.
+    \end{definicija}
+
+\end{frame}
+% -------------------------------------------------------------------
+
+% -------------------------------------------------------------------
+\begin{frame}
+
+  Upoštevajte igro \( G = (N, S, u) \), ki jo določa množica igralcev \( N \), strategijski nabori \( S_i \) za vsakega igralca in uporabnosti \( u_i : S \to \mathbb{R}\), kjer je \( S = S_1 \times \ldots \times S_N\). To imenujemo tudi množica izidov. Lahko definiramo merilo učinkovitosti vsakega izida, ki mu pravimo funkcija blaginje Welf(s):\( s\to \mathbb{R}\). Naravni kandidati vključujejo vsoto uporabnosti igralcev (utilitarni cilj)\( Welf(s)=\sum_{i\in N}u_i(s)\), minimalno uporabnost (cilj pravičnosti ali egalitarni cilj)\( Welf(s)=\min_{i\in N}u_i(s)\).
+
+
+Podmnožico Equil\( C_s\) lahko definiramo kot množico strategij v ravnovesju. Cena anarhije je potem definirana kot razmerje med optimalno 'centralizirano' rešitvijo in najslabšim 'ravnovesjem':
+
+\end{frame}
+% -------------------------------------------------------------------
+
+% -------------------------------------------------------------------
+\begin{frame}
+
+  \frametitle{Ceni anarhije in stabilnosti}
+  V delu se bomo ukvarjalise tudi z ceno anarhije (PoA) in ceno stabilnosti (PoS).
+  Ceni anarhije in stabilnosti merita, kako se učinkovitost sistema poslabša zaradi sebičnega vedenja njegovih agentov.
+  Cena anarhije je razmerje med vrednostjo/ceno, iz socialnega vidika (skupnega vidika vseh igralcev), najslabšega ravnovesja in socialno ceno optimalnega izida
+  Cena stabilnosti igre pa je razmerje med najboljšo socialno ceno ravnovesja in socialno ceno optimalnega izida.
+  V našem primeru sta definirani kot:
+  \begin{definicija}
+    $PoA = \frac{\text{Cena najslabšega ravnovesja}}{\text{Cena optimalne postavitve}} = \frac{\max_{s\in Equil} Cost(s)}{\min_{s\in S} Cost(s)}$
+    $=\frac{\max_{s\in Equil} Cost(s)}{\min_{s\in S} Cost(s)}$
+  \end{definicija}
+  \begin{definicija}
+    $PoA = \frac{\text{Cena najboljšega ravnovesja}}{\text{Cena optimalne postavitve}} = \frac{\min_{s\in Equil} Cost(s)}{\min_{s\in S} Cost(s)}$
+  \end{definicija}
+
+\end{frame}
+% -------------------------------------------------------------------
+
+% -------------------------------------------------------------------
+\begin{frame}
+
+  \frametitle{Drevesa: skupna vsota razdalj}
+  \begin{izrek}
+    Če je ravnovesni graf za skupno vsoto razdalj v preprosti igri ustvarjanja
+    omrežja drevo, potem ima premer največ $2$ in je kot tak zvezda.
+  \end{izrek}
+
+  \includegraphics[width=0.3\textwidth]{drevo_1.png}
+  \includegraphics[width=0.3\textwidth]{drevo_2.png}
+  \includegraphics[width=0.3\textwidth]{drevo_3.png}
+\end{frame}
+% -------------------------------------------------------------------
+
+% -------------------------------------------------------------------
+\begin{frame}
+   
+  \frametitle{Drevesa: maksimalna razdalja}
+  \begin{lema}
+    V vsakem ravnovesnem grafu igre maksimalne razdalje se lokalni premer za
+    katera koli $2$ poljubna vozlišča razlikuje največ za $1$.
+  \end{lema}
+
+  \begin{lema}
+    Če ima ravnovesni graf za maksimalno razdaljo prerezno vozlišče, potem ima lahko
+    samo ena izmed povezanih komponent $G - v$ vozlišče z razdaljo več kot $1$ od $v$.
+  \end{lema}
+
+  \begin{izrek}
+    Če je ravnovesni graf za maksimalno razdaljo drevo, potem ima premer največ $3$.
+  \end{izrek}
+
+\end{frame}
+% -------------------------------------------------------------------
+
+% -------------------------------------------------------------------
+\begin{frame}
+  
+  \frametitle{Skupna vsota razdalj: spodnje meje}
+  \begin{lema}
+    Za vozlišče $v$ z lokalnim premerom $2$, zamenjava sosednje povezave ne izboljša
+    vsote razdalj od $v$ do vseh ostalih voclišč. Prav tako tudi svojega lokalnega premera ne more izboljšati.
+  \end{lema}
+  \begin{posledica}
+    Vsak graf z premerom $2$ ali manj je v \textit{ravnotežju glede na vsoto razdalj}.
+    In hkrati socialni optimum, zato je vena stabilnosti 1.
+  \end{posledica}
+  
+\end{frame}
+
+% -------------------------------------------------------------------
+
+% -------------------------------------------------------------------
+\begin{frame}
+  
+  \frametitle{Skupna vsota razdalj: spodnje meje}
+  \begin{izrek}
+    Naj bo $G$ graf z $n$ vozlišči in $m$ povezavami, potem je $W(G) = n^2 - n - m$, če in samo če je premer grafa $2$ ali manj.
+  \end{izrek}
+  \begin{posledica}
+    Za vsak graf $G$ z $n$ vozlišči, $m$ povezavami in premerom večjim od $2$ velja:
+    $$W(G) \geq n^2 - n - m + 1.$$
+    Enačaj velja kadar ima graf $G$ natanko $2$ vozlišča z lokalnim premerom $3$ in vsa ostala vozlišča z lokalnim premerom $2$.
+  \end{posledica}
+  
+\end{frame}
+
+% -------------------------------------------------------------------
+
+% -------------------------------------------------------------------
+\begin{frame}
+  
+  \frametitle{Skupna vsota razdalj: spodnje meje}
+  \begin{columns}
+    \column{0.5\textwidth}
+    \begin{izrek}
+      Obstaja ravnovesni graf za skupno vsoto razdalj s premerom 3.
+    \end{izrek}
+    \column{0.5\textwidth}
+    \includegraphics[width=1\textwidth]{vsota_premer_3.png}
+  \end{columns}
+  
+\end{frame}
+
+% -------------------------------------------------------------------
+
+% -------------------------------------------------------------------
+\begin{frame}
+   
+  \frametitle{Skupna vsota razdalj: zgornja meja $2^{O(\sqrt{\lg n})}$}
+  \begin{izrek}
+    Vsak ravnovesni graf za skupno vsoto razdalj ima premer $2^{O(\sqrt{\lg n})}$.
+  \end{izrek}
+
+  \begin{lema}
+    Vsak ravnovesni graf za skupno vsoto razdalj ima premer največ $2 \lg n$ ali
+    za vsako vozlišče $v$ obstaja povezava $xy$ kjer je $d(u, x) \leq \lg n$ in
+    zamenjava povezave $xy$ zmanjša vsoto razdalj od $x$ za največ $2n(1 + \lg n)$.
+  \end{lema}
+
+  \begin{lema}
+    V vsakem ravnovesnem grafu za skupno vsoto razdalj dodajanje poljubne povezave
+    $uv$ zmanjša vsoto razdalj od $u$ za največ $5n \log n$.
+  \end{lema}
+
+\end{frame}
+% -------------------------------------------------------------------
+
+% -------------------------------------------------------------------
+\begin{frame}
+
+  \frametitle{Maksimalna razdalja}
+  \begin{columns}
+    \column{0.5\textwidth}
+    \begin{izrek}
+        Obstaja ravnovesni graf za maksimalno razdaljo z premerom $\Theta(\sqrt{n})$.
+    \end{izrek}
+    \column{0.5\textwidth}
+    \includegraphics[width=1\textwidth]{Plagiat.png}
+  \end{columns}
+  
+  
+
+\end{frame}
+% -------------------------------------------------------------------
+
+% -------------------------------------------------------------------
+\begin{frame}
+
+  \frametitle{Povezava z grafi z enotsko razdaljo}
+  \begin{izrek}
+    Vsak ravnovesni graf za skupno vsoto razdaljo $G$ z $n \geq 24$ vozlišč in
+    premerom $d > 2 \lg n$ inducira podgraf z $\epsilon\text{-skoraj-enotno-razdaljo } G'$
+    z $n$ vozlišči in premerom $\Theta\left(\frac{\varepsilon d}{\lg n}\right)$ in
+    podgraf z $\epsilon\text{-enotno-razdaljo } G'$ z $n$ vozlišči in premerom
+    $\Theta\left(\frac{\varepsilon d}{\lg^2 n}\right)$.
+  \end{izrek}
+
+  \begin{domneva}
+    Razdaljno skoraj enotni grafi imajo premer $O(\lg n)$.
+  \end{domneva}
+
+
+\end{frame}
+% -------------------------------------------------------------------
+
+
+
+
+\end{document}

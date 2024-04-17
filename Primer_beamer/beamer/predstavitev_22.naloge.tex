@@ -1,0 +1,250 @@
+\documentclass[12pt, hyperref={unicode}]{beamer}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[slovene]{babel}
+
+\usepackage{pgfpages}
+\usepackage{bookmark}
+\usepackage{graphicx}%za vstavljanje slik%
+\usepackage{array}%za tabele%ž
+\usepackage{enumerate}
+\usepackage{lmodern}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+
+
+\mode<presentation>
+
+%tema
+\usetheme{Berlin}
+\usecolortheme{default}
+\useinnertheme[shadows]{rounded}
+\useoutertheme{infolines}
+\setbeamertemplate{navigation symbols}{}
+\beamertemplatenavigationsymbolsempty
+
+%pisava
+\usepackage{palatino}
+\usefonttheme{serif}
+%serif doda podaljšane črtice pri I
+
+\newtheorem{definicija}{Definicija}
+\newtheorem{izrek}{Izrek}
+
+\title{Seminar}
+\subtitle{Predstavitev 22. naloge}
+\author{Peter Milivojević}
+\institute[FMF]{Fakulteta za matematiko in fiziko}
+\date{12. \ maj \ 2022}
+
+\begin{document}
+
+% ===================================================================
+\begin{frame}
+    \titlepage
+\end{frame}      
+     
+% -------------------------------------------------------------------
+
+
+% -------------------------------------------------------------------
+\begin{frame}
+   
+  \frametitle{Besedilo naloge}
+  Naj bo $ (X_i)_{i\geq1} $ zaporedje neodvisnih enako porazdeljenih slučajnih spremenljivk,
+  porazdeljenih zvezno s porazdelitveno funkcijo F.
+  Naj bo $A_k = \{max\{ X_1, \dots , X_k \} = X_k\}$ dogodek,
+  da je $k$-ta vrednost $rekord$,
+  in $Z_k = 1_{A_k}$ njegova indikatorska funkcija.
+
+  \begin{enumerate}[a]
+    \item Kakšna je porazdelitev slučajne spremenljivke $Z_k$?
+    \item Za $n \geq 1$ in $1 \leq j_1 < j_2 < \cdots < j_i \leq n, i \leq n$, pokaži, da velja 
+    $$P(Z_{j_1} = 1, Z_{j_2} = 1, \dots, Z_{j_i} = 1) = \frac{1}{j_1j_2 \cdots j_i} .$$\\
+    S pomočjo tega pokaži, da so slučajne spremenljivke $Z_k$, $k \geq 1$, neodvisne.
+    \item  Naj bo $N_1 = \sum_{k\geq1} Z_k $ število vseh rekordov in $N_2 = \sum_{k\geq1} Z_k Z_{k+1}$ število vseh
+    zaporednih rekordov. Pokaži, da je $N_1 = \infty $ s. g., in izračunaj $\mathbb{E}(N_2)$
+  \end{enumerate}
+
+\end{frame}
+% -------------------------------------------------------------------
+
+% -------------------------------------------------------------------
+\begin{frame}
+   
+  \frametitle{(a) primer}
+  V prvem delu naloge iščemo porazdelitev slučajne spremenljivke
+  $Z_k = 1_{A_k}$, ki je indikatorska funkcija za dogodek
+  $A_k = \{max\{ X_1, \dots , X_k \} = X_k\}$ in nam pove ali je
+  $k$-ta vrednost $rekord$ oziroma največja. $(X_i)_{i\geq1}$ 
+  pa je zaporedje neodvisnih enako zvezno porazdeljenih slučajnih spremenljivk.\\
+  \vspace{3mm}
+
+  Tako ima zaradi enake in neodvisne porazdelitve vsaka izmed $X_i \in \{X_1, \dots , X_{k-1}\}$
+  enako verjetnost, da je največja. Zaradi zveznosti, pa je verjetnost, da bi bile 2 hkrati rekord enaka 0.
+  
+
+\end{frame}
+% -------------------------------------------------------------------
+
+% -------------------------------------------------------------------
+\begin{frame}
+
+  \frametitle{(a) primer}
+  Torej verjetnosti se morajo sešteti skupaj v 1 (saj je verjetnost, da bi bile 2 vrednosti hkrati rekord zanemarljiva)
+  in biti vse enake, $p_i = p_j \; (p_i$ verjetnost da je $X_i$ rekord) za poljuben $i,j \in \{1,\dots , k \}$.
+  Torej $p_1+ \dots + p_k = 1 = k \cdot p_k \Rightarrow p_k = \frac{1}{k}$, iz česar sledi:\\
+  $$P(max\{X_1, \dots , X_{k-1}\} \leq X_k) = \frac{1}{k}.$$
+  \vspace{5mm}
+
+  Iz tega sledi, da je $Z_k$ porazdeljena z Bernullijevo porazdelitvijo $Ber(\frac{1}{k})$\\
+  $$Z_k : \left( \begin{array}{cc} 0 & 1\\
+  \frac{k-1}{k} & \frac{1}{k} \end{array}\right)$$
+
+\end{frame}
+% -------------------------------------------------------------------
+
+% -------------------------------------------------------------------
+\begin{frame}
+   
+  \frametitle{(a) primer}
+  Za potrditev rezultata si bomo pomagali z definicijo neodvisnosti slučajnih spremenljivk.
+  \begin{definicija}
+    Slučajne spremenljivke $X_1, \dots , X_n$ so neodvisne $\Longleftrightarrow$
+    $F_{X_1, \dots , X_n}(x_1, \dots , x_n)=F_{X_1}(x_1) \cdots F_{X_n}(x_n)$
+    za vse $(x_1, \dots , x_n) \in \mathbb{R}^n$, torej dogodki $(X_1 \leq x_1), \dots , (X_n \leq x_n)$ so neodvisni.
+  \end{definicija}   
+  \vspace{1mm}
+  V našem primeru je tako porazdelitev za slučajnegi vektor $\overrightarrow{X}=(X_1, \dots , X_{k})$ zaradi neodvisnosti enaka
+  $F_{X_1, \dots , X_{k}}(x_1, \dots , x_k)=F_{X_1}(x_1) \cdots F_{X_{k}}(x_k)$
+  in enako velja za vsako izmed $k!$ permutacij slučajnega vektorja $\overrightarrow{X}$.
+  Pri računanju števila permutacij upoštevamo, da so $ (X_i)_{i\geq1} $ zvezne in s tem je skoraj nemogoče, da bi imele 2 enako vrednost($P(X_i=X_j)=0$).
+  
+
+\end{frame}
+% -------------------------------------------------------------------
+
+% -------------------------------------------------------------------
+\begin{frame}
+  
+  \frametitle{(a) primer}
+  Če pogledamo porazdelitveno funkcijo $F_{X_1, \dots , X_{k-1}}(X_k, \dots , X_k)=F_{X_1}(X_k) \cdots F_{X_{k-1}}(X_k)$,
+  ki nam pove porazdelitev kdaj so spremenljivke $X_1, \dots , X_{k-1} \leq X_k$ in vidimo,
+  da ima tako vektor $\overrightarrow{X_k}=(X_1, \dots , X_{k-1})$ možnih $(k-1)!$ permutacij, kjer ponovno upoštevamo, da so zvezne.\\
+  \vspace{3mm}
+  Tako lahko problem prevedemo na kombinatoriko, kjer dobimo
+  $$P(Z_k=1)= \frac{permutacie \: kjer\: je \: X_k \: največja}{vse \: možne \: permutacije} = \frac{(k-1)!}{k!} = \frac{1}{k}.$$
+
+\end{frame}
+% -------------------------------------------------------------------
+
+% -------------------------------------------------------------------
+\begin{frame}
+   
+  \frametitle{(b) primer 1.del}
+  Za $n \geq 1$ in $1 \leq j_1 < j_2 < \cdots < j_i \leq n, i \leq n$, moramo pokazati, da velja 
+  $$P(Z_{j_1} = 1, Z_{j_2} = 1, \dots, Z_{j_i} = 1) = \frac{1}{j_1j_2 \cdots j_i} .$$\\
+  S pomočjo tega pa moramo pokazi, da so slučajne spremenljivke $Z_k$, $k \geq 1$, neodvisne.\\
+  \vspace{5mm}
+  Prvo si lahko pogledamo ali enačba velja za poljuben $n$ in $i=1$.\\
+  $$P(Z_{j_1}=1)=\frac{1(j_1-1)!}{(j_1)!}=\frac{1}{j_1}$$
+
+\end{frame}
+% -------------------------------------------------------------------
+
+% -------------------------------------------------------------------
+\begin{frame}
+
+  \frametitle{(b) primer 1.del}
+  Za $i=2$ sledi $P(Z_{j_1}=1,Z_{j_2}=1)=\frac{1(j_2-1)(j_2-2)\cdots(j_1+1)1(j_1-1)!}{(j_2)!}=\frac{1}{j_2j_1}$.
+  Pri tem koraku smo upoštevali, da more biti $X_{j_1}\geq X_t$ za vse $t\in\{1,\dots,j_1-1\}$ in, da je $j_2\geq j_1$
+  kar pomeni, da zadošča, da je $X_{j_2}\geq X_t$ za vse $t\in\{j,\dots,j_2-1\}$.\\
+  \vspace{3mm}
+
+  Ostane nam samo še dokazati indukcijo kjer upoštevamo enake zakonitosti le razširjene za večji $i$ $P(Z_{j_1}=1,\dots ,Z_{j_i}=1,Z_{j_{i+1}}=1)=\frac{1(j_{i+1}-1)\cdots(j_i+1)1(j_i-1)\cdots(j_1+1)1(j_1-1)!}{(j_{i+1})!}=\frac{1}{j_{i+1}j_i\cdots j_2j_1}$.\\
+  \vspace{3mm}
+
+  Preverimo lahko še za primer $n=i$ kjer dobimo $P(Z_1=1,\dots ,Z_n=1)=\frac{1}{n!}$ kar ustreza formuli.
+\end{frame}
+% -------------------------------------------------------------------
+
+% -------------------------------------------------------------------
+\begin{frame}
+
+  \frametitle{(b) primer 2.del}
+  Želja je pokazati, da iz te enakosti
+  $$P(Z_{j_1} = 1, Z_{j_2} = 1, \dots, Z_{j_i} = 1) = \frac{1}{j_1j_2 \cdots j_i} $$
+  sledi neodvisnost med slučajnimi spremenljivkami $Z_k$ za $k \geq 1$.
+\end{frame}
+% -------------------------------------------------------------------
+
+% -------------------------------------------------------------------
+\begin{frame}
+  
+  \frametitle{(b) primer 2.del}
+  $$P(Z_{j_1} = 1, Z_{j_2} = 1, \dots, Z_{j_i} = 1) = \frac{1}{j_1j_2 \cdots j_i} = $$\\
+  $$ = \frac{1}{j_1} \frac{1}{j_2} \cdots \frac{1}{j_i} = $$\\
+  $$ = P(Z_{j_1} = 1) P(Z_{j_2} = 1) \cdots P(Z_{j_i} = 1)$$
+  \vspace{5mm}
+
+  Tako dobimo enakost $P(Z_{j_1}= 1, Z_{j_2}= 1, \dots, Z_{j_i}= 1) =$\\
+  $= P(Z_{j_1}= 1) P(Z_{j_2}= 1) \cdots P(Z_{j_i}= 1)$
+  kar nam, da (po poenostavljeni formuli za diskretne spremenljivke) neodvisnost med slučajnimi spremenljivkami $Z_k$ za $k \geq 1$.
+  
+\end{frame}
+% -------------------------------------------------------------------
+
+% -------------------------------------------------------------------
+\begin{frame}
+   
+  \frametitle{(c) primer}
+  V tretjem delu naloge moramo pokazati, da je $N_1 = \sum_{k\geq1} Z_k = \infty$ s. g..
+  Torej pokazati, da je vsota vseh rekordov neskončna, ko gre zaporedje $ (X_i)_{i\geq1} $ v neskončnost.
+  V drugem delu pa moramo izračunati pričakovano vrednost $N_2 = \sum_{k\geq1} Z_k Z_{k+1}$,
+  torej pričakovano vrednost števila vseh
+  zaporednih rekordov $(\mathbb{E}(N_2))$.
+  \vspace{5mm}
+
+  Tako $N_1$ izgleda oblike $$N_1 : \left( \begin{array}{cccc} 0 & 1 & 2 & \cdots\\
+    p_0 & p_1 & p_2 & \cdots \end{array}\right)$$
+
+\end{frame}
+% -------------------------------------------------------------------
+
+% -------------------------------------------------------------------
+\begin{frame}
+  
+  \frametitle{(c) primer 1.del}
+  Prvo lahko na primer pogledamo za neko fiksno število $n$ in nek fiksen $N_1=i$.
+  Predpostavimo, da se je $i$-ti rekord zgodil pri $k$-ti slučajni spremenljivki $X_k$. Torej velja $i\leq k \leq n$.
+  Tako je za fiksen $n$ verjetnost, da je v $k$-ti slučajni spremenljivki zadnji rekord enaka $\frac{1(n-k)!}{(n-k+1)!}=\frac{1}{n-k+1}$
+  saj fiksiramo $X_k$ kot največjo sl. sprem., medtem ko lahko sl. sprem.$X_{k+1},\dots , X_n$ poljubno premešamo na $(n-k)!$ permutacij.
+  \vspace{3mm}
+
+  Vendar, ker nas naloga sprašuje za neomejen $n$ je naša verjetnost za vsak fiksen k ko gre $n\rightarrow \infty$ enaka $0$.
+  Iz tega lahko sklepamo, da je porazdelitev podobna $$N_1: \left( \begin{array}{ccccc} 0 & 1 & 2 & \cdots & \infty\\
+    0 & 0 & 0 & \cdots & 1 \end{array}\right)$$ in tako s. g. $N_1=\infty$
+  
+\end{frame}
+% -------------------------------------------------------------------
+
+% -------------------------------------------------------------------
+\begin{frame}
+  
+  \frametitle{(c) primer 2.del}
+  Drugi del tretjega dela naloge pa od nas zahteva, da izračunamo
+  $(\mathbb{E}(N_2))$. Tako je po formuli $\mathbb{E}(X)=\sum_{k\geq1} x_kp(x_k)$:
+  $$\mathbb{E}(N_2)=\sum_{k\geq1} 0\frac{k-1}{k}0\frac{k}{k+1} + 0\frac{k-1}{k}1\frac{1}{k+1} + 1\frac{1}{k}0\frac{k}{k+1} + 1\frac{1}{k}1\frac{1}{k+1} =$$
+  $$ = \sum_{k\geq1} \frac{1}{k}\frac{1}{k+1} =$$
+  Uporabimo parcialne ulomke $\frac{1}{k}\frac{1}{k+1} = \frac{A}{k} + \frac{B}{k+1} =
+  \frac{A(k+1) + Bk}{k(k+1)} \Rightarrow$ \\
+  $\Rightarrow A + B = 0$ in $A = 1 \Rightarrow B = -1$
+  $$ = \sum_{k\geq1} \frac{1}{k} - \sum_{k\geq1} \frac{1}{k+1} = \sum_{k\geq1} \frac{1}{k} - (\sum_{k\geq0} \frac{1}{k+1} - 1)$$
+  $$ = \sum_{k\geq1} \frac{1}{k} + 1 - \sum_{k\geq1} \frac{1}{k} = 1$$
+
+
+\end{frame}
+% -------------------------------------------------------------------
+
+\end{document}
