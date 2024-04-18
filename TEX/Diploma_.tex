@@ -85,7 +85,7 @@
 Namen diplomske naloge se je spoznati z igrami ustvarjanja omrežja s poudarkom na dve osnovni verziji tega problema.
 V igri ustvarjanja omrežja imamo igralce, predstavljene kot vozlišča v grafu, ki želijo s 'sebično' izbiro svoje
 strategije izboljšati svoj položaj. Običajno ima vsak igralec dva sebična cilja. Prvi cilj je minimizirat stroške
-ustvarjanja povezav (omrežja) in drugi je minimizirat razdaljo, do ostalih vozlišč (strošek uporabe omrežja).\\
+ustvarjanja povezav (omrežja) in drugi je minimizirat razdaljo, do ostalih vozlišč (strošek uporabe omrežja).
 
 
 V osnovnih igrah omrežji predpostavimo, da se ne da primerjati cene ustvarjanja in vzdrževanja povezav. Zato se
@@ -128,11 +128,11 @@ Naj bo $G$ povezan graf. Lokalni premer točke $v$ grafa $G$ je definiran kot $\
 Povezan graf $G$ ima prerezno vozlišče $v$, če graf $G - v$ ni povezan.
 \end{definicija}
 
-\begin{definicija}
-Povezanost po povezavah $\lambda(G)$ povezanega grafa $G$ je najmanjše število povezav,
-z odstranitvijo katerih postane graf $G$ nepovezan. Če je $\lambda(G) \geq k$,
-je graf $G$ po povezavah $k$-povezan.
-\end{definicija}
+%\begin{definicija}
+%Povezanost po povezavah $\lambda(G)$ povezanega grafa $G$ je najmanjše število povezav,
+%z odstranitvijo katerih postane graf $G$ nepovezan. Če je $\lambda(G) \geq k$,
+%je graf $G$ po povezavah $k$-povezan.
+%\end{definicija}
 
 Weinerjev indeks nam bo pomagal z kasnejšimi dokazi.
 
@@ -145,6 +145,10 @@ kjer $d_{ij}$ označuje dolžino najkrajše poti med vozliščem $i$ in $j$.
 
 \section{Igra}
 Pomembno za razumevanje kasnejših delov diplomske naloge je tudi razumevanje kaj je igra v smislu teorije iger.
+
+
+!!!!!!!!!
+
 
 \begin{definicija}
     Strateška igra s funkcijo preferenc je trojica $(N, (A_i)_{i\in N} , (u_i)_{i\in N})$ pri čemer:
@@ -196,17 +200,17 @@ V delu se bomo ukvarjalise tudi z ceno anarhije (PoA) in ceno stabilnosti (PoS).
 Ceni anarhije in stabilnosti merita, kako se učinkovitost sistema poslabša zaradi sebičnega vedenja njegovih agentov.
 Cena anarhije je razmerje med vrednostjo/ceno, iz socialnega vidika (skupnega vidika vseh igralcev), najslabšega ravnovesja in socialno ceno optimalnega izida
 Cena stabilnosti igre pa je razmerje med najboljšo socialno ceno ravnovesja in socialno ceno optimalnega izida.\\
-
-
-V igri vsote.
-
+Socialno ceno grafa bomo definirali kot vsoto cen vseh vozlišč. Za igro vsote bomo tako socialno ceno definirali kot $SC(G) = 2W(G)$,
+za igro lokalnega premera pa kot $SC(G) = \sum_{i=1}^{n}\epsilon_G(i)$.
+Tako lahko definiramo sledeče:
 \begin{definicija}
-    $PoA = \frac{\text{Cena najslabšega ravnovesja}}{\text{Cena optimalne postavitve}} = \frac{\max_{s\in Equil} Cost(s)}{\min_{s\in S} Cost(s)}$
-    $=\frac{\max_{s\in Equil} Cost(s)}{\min_{s\in S} Cost(s)}$
+$PoA = \frac{\text{Socialna cena najslabšega ravnovesja}}{\text{Socialna cena optimalne postavitve}} = \frac{\max_{G\in R} SC(G)}{\min_{G\in A} SC(G)}$
 \end{definicija}
 \begin{definicija}
-    $PoA = \frac{\text{Cena najboljšega ravnovesja}}{\text{Cena optimalne postavitve}} = \frac{\min_{s\in Equil} Cost(s)}{\min_{s\in S} Cost(s)}$
+$PoS = \frac{\text{Socialna cena najboljšega ravnovesja}}{\text{Socialna cena optimalne postavitve}} = \frac{\min_{G\in R} SC(G)}{\min_{G\in A} SC(G)}$
 \end{definicija}
+Kjer $A$ predstavlja množico vseh možnih povezanih grafov z $|V(G)| = n$ vozlišči in manj ali enako kot $|E(G)| = m$ povezavami.
+Množica $R \subseteq A$ pa predstavlja množico vseh ravnovesnih grafov, ki lahko nastanejo iz začetnih grafov z $n$ vozlišči in $m$ povezavami.
 
 
 
@@ -460,32 +464,44 @@ Vsak ravnovesni graf za osnovne igre ustvarjanja omrežji (mogoče samo za vsoto
 
 \section{Testiranje}
 
+Lokalni premer verzija:
 
-Socialni optimum max \\
-\begin{table}[h]
-    \centering
-    \resizebox{\linewidth}{!}{%
-        \begin{tabular}{|c|*{16}{c|}}
-        \hline
-        \multirow{\textbf{n$\backslash$e}} & \multicolumn{16}{c|}{\textbf{Število povezav}} \\ \cline{2-17}
-        & \textbf{n - 1} & \textbf{n} & \textbf{n + 1} & \textbf{n + 2} & \textbf{n + 3} & \textbf{n + 4} & \textbf{n + 5} 
-        & \textbf{n + 6} & \textbf{n + 7} & \textbf{n + 8} & \textbf{n + 9} & \textbf{n + 10} & \textbf{n + 11} & \textbf{n + 12} 
-        & \textbf{n + 13} & \textbf{n + 14}\\
-        \hline
-            2 & (2, 'Je ravnovesje')  &                                                                           &                                                                           &                                                                           &                                                                           &                                                                           &                                                                           &                                                                           &                                                                           &                                                                           &                                                                           &                                                                           &                                                                           &                                                                           &                                                                          &                      \\
-            3 & (5, 'Je ravnovesje')  & (3, 'Je ravnovesje')                                                      &                                                                           &                                                                           &                                                                           &                                                                           &                                                                           &                                                                           &                                                                           &                                                                           &                                                                           &                                                                           &                                                                           &                                                                           &                                                                          &                      \\
-            4 & (7, 'Je ravnovesje')  & (7, 'Ni max ravnovesje, vozlišču 1 se splača izbrisati povezavo (1, 2)')  & (6, 'Ni max ravnovesje, vozlišču 2 se splača izbrisati povezavo (2, 0)')  & (4, 'Je ravnovesje')                                                      &                                                                           &                                                                           &                                                                           &                                                                           &                                                                           &                                                                           &                                                                           &                                                                           &                                                                           &                                                                           &                                                                          &                      \\
-            5 & (9, 'Je ravnovesje')  & (9, 'Ni max ravnovesje, vozlišču 1 se splača izbrisati povezavo (1, 2)')  & (9, 'Ni max ravnovesje, vozlišču 1 se splača izbrisati povezavo (1, 2)')  & (8, 'Ni max ravnovesje, vozlišču 2 se splača izbrisati povezavo (2, 0)')  & (8, 'Ni max ravnovesje, vozlišču 2 se splača izbrisati povezavo (2, 0)')  & (7, 'Ni max ravnovesje, vozlišču 3 se splača izbrisati povezavo (3, 0)')  & (5, 'Je ravnovesje')                                                      &                                                                           &                                                                           &                                                                           &                                                                           &                                                                           &                                                                           &                                                                           &                                                                          &                      \\
-            6 & (11, 'Je ravnovesje') & (11, 'Ni max ravnovesje, vozlišču 1 se splača izbrisati povezavo (1, 2)') & (11, 'Ni max ravnovesje, vozlišču 1 se splača izbrisati povezavo (1, 2)') & (11, 'Ni max ravnovesje, vozlišču 1 se splača izbrisati povezavo (1, 2)') & (10, 'Ni max ravnovesje, vozlišču 2 se splača izbrisati povezavo (2, 0)') & (10, 'Ni max ravnovesje, vozlišču 2 se splača izbrisati povezavo (2, 0)') & (10, 'Ni max ravnovesje, vozlišču 2 se splača izbrisati povezavo (2, 0)') & (9, 'Ni max ravnovesje, vozlišču 3 se splača izbrisati povezavo (3, 0)')  & (9, 'Ni max ravnovesje, vozlišču 3 se splača izbrisati povezavo (3, 0)')  & (8, 'Ni max ravnovesje, vozlišču 4 se splača izbrisati povezavo (4, 0)')  & (6, 'Je ravnovesje')                                                      &                                                                           &                                                                           &                                                                           &                                                                          &                      \\
-            7 & (13, 'Je ravnovesje') & (13, 'Ni max ravnovesje, vozlišču 1 se splača izbrisati povezavo (1, 2)') & (13, 'Ni max ravnovesje, vozlišču 1 se splača izbrisati povezavo (1, 2)') & (13, 'Ni max ravnovesje, vozlišču 1 se splača izbrisati povezavo (1, 2)') & (13, 'Ni max ravnovesje, vozlišču 1 se splača izbrisati povezavo (1, 2)') & (12, 'Ni max ravnovesje, vozlišču 2 se splača izbrisati povezavo (2, 0)') & (12, 'Ni max ravnovesje, vozlišču 2 se splača izbrisati povezavo (2, 0)') & (12, 'Ni max ravnovesje, vozlišču 2 se splača izbrisati povezavo (2, 0)') & (12, 'Ni max ravnovesje, vozlišču 2 se splača izbrisati povezavo (2, 0)') & (11, 'Ni max ravnovesje, vozlišču 3 se splača izbrisati povezavo (3, 0)') & (11, 'Ni max ravnovesje, vozlišču 3 se splača izbrisati povezavo (3, 0)') & (11, 'Ni max ravnovesje, vozlišču 3 se splača izbrisati povezavo (3, 0)') & (10, 'Ni max ravnovesje, vozlišču 4 se splača izbrisati povezavo (4, 0)') & (10, 'Ni max ravnovesje, vozlišču 4 se splača izbrisati povezavo (4, 0)') & (9, 'Ni max ravnovesje, vozlišču 5 se splača izbrisati povezavo (5, 0)') & (7, 'Je ravnovesje') 
-        \hline
-        \end{tabular}
-    }
-    \caption{Your table caption goes here.}
-    \label{tab:tabela1}
+\begin{table}[]
+\begin{tabular}{ll}
+Št. ravnovesnih grafov & Št. vozlišč\\
+1                      & 1          \\
+1                      & 2          \\
+2                      & 3          \\
+3                      & 4          \\
+4                      & 5          \\
+7                      & 6          \\
+12                     & 7          \\
+24                     & 8          
+\end{tabular}
+\caption{Maks verzija}
 \end{table}
 
-\\
+Vsota razdalj verzija:
+
+\begin{table}[]
+\begin{tabular}{ll}
+Št ravnovesji & Št. vozlišč\\
+1             & 1          \\
+1             & 2          \\
+2             & 3          \\
+5             & 4          \\
+15            & 5          \\
+60            & 6          \\
+374           & 7          \\
+4161          & 8         
+\end{tabular}
+\caption{Verzija vsote}
+\end{table}
+
+
+
+
+Socialni optimum max \\
 
 \begin{table}[h]
     \centering
@@ -511,9 +527,10 @@ Socialni optimum max \\
 \end{table}\\
 
 
-Premer grafa je največ 2. Vozlišča s premerom 2 bi si želela odstraniti nekatere povezave. Cena stabilnosti je lahko večja od 1 ampak manjša od 2. Ko gre n proti neskončno konvergira proti 2 ali 1.
+Premer grafa je največ 2. Vozlišča s premerom 2 bi si želela odstraniti nekatere povezave.
+Cena stabilnosti je lahko večja od 1 ampak manjša od 2. Ko gre n proti neskončno konvergira proti 2 ali 1.
 !!!!!! Optimalni grafi se stabilizirajo kot zvezde za max.
-\\
+
 
 Socialni optimum sum, (opti, premer)\\
 \begin{table}[h]

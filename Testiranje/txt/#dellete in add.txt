@@ -1,0 +1,17 @@
+#dellete in add
+#6 do n=5
+#10 za n=6
+# 93 za n =7
+
+#dellete in dellete in add
+#6 do n=5
+#10 za n=6
+# 94 za n =7
+
+#add in dellete
+#6 do n=5
+#11 za n=6
+#119 za n=7
+
+
+

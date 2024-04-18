@@ -1,0 +1,47 @@
+1 za 2 vozlišč in 1 povezav
+1 za 2 vozlišč
+3 za 3 vozlišč in 2 povezav
+1 za 3 vozlišč in 3 povezav
+4 za 3 vozlišč
+4 za 4 vozlišč in 3 povezav
+3 za 4 vozlišč in 4 povezav
+0 za 4 vozlišč in 5 povezav
+1 za 4 vozlišč in 6 povezav
+8 za 4 vozlišč
+5 za 5 vozlišč in 4 povezav
+12 za 5 vozlišč in 5 povezav
+10 za 5 vozlišč in 6 povezav
+0 za 5 vozlišč in 7 povezav
+0 za 5 vozlišč in 8 povezav
+0 za 5 vozlišč in 9 povezav
+1 za 5 vozlišč in 10 povezav
+28 za 5 vozlišč
+96 za 6 vozlišč in 5 povezav
+120 za 6 vozlišč in 6 povezav
+180 za 6 vozlišč in 7 povezav
+15 za 6 vozlišč in 8 povezav
+10 za 6 vozlišč in 9 povezav
+0 za 6 vozlišč in 10 povezav
+0 za 6 vozlišč in 11 povezav
+0 za 6 vozlišč in 12 povezav
+0 za 6 vozlišč in 13 povezav
+0 za 6 vozlišč in 14 povezav
+1 za 6 vozlišč in 15 povezav
+422 za 6 vozlišč
+427 za 7 vozlišč in 6 povezav
+4140 za 7 vozlišč in 7 povezav
+0 za 7 vozlišč in 8 povezav
+1890 za 7 vozlišč in 9 povezav
+651 za 7 vozlišč in 10 povezav
+0 za 7 vozlišč in 11 povezav
+35 za 7 vozlišč in 12 povezav
+0 za 7 vozlišč in 13 povezav
+0 za 7 vozlišč in 14 povezav
+0 za 7 vozlišč in 15 povezav
+0 za 7 vozlišč in 16 povezav
+0 za 7 vozlišč in 17 povezav
+0 za 7 vozlišč in 18 povezav
+0 za 7 vozlišč in 19 povezav
+0 za 7 vozlišč in 20 povezav
+1 za 7 vozlišč in 21 povezav
+7144 za 7 vozlišč

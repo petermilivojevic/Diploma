@@ -1,0 +1,47 @@
+1 za 2 vozlišč in 1 povezav
+1 za 2 vozlišč
+3 za 3 vozlišč in 2 povezav
+1 za 3 vozlišč in 3 povezav
+4 za 3 vozlišč
+16 za 4 vozlišč in 3 povezav
+15 za 4 vozlišč in 4 povezav
+6 za 4 vozlišč in 5 povezav
+1 za 4 vozlišč in 6 povezav
+38 za 4 vozlišč
+125 za 5 vozlišč in 4 povezav
+222 za 5 vozlišč in 5 povezav
+205 za 5 vozlišč in 6 povezav
+120 za 5 vozlišč in 7 povezav
+45 za 5 vozlišč in 8 povezav
+10 za 5 vozlišč in 9 povezav
+1 za 5 vozlišč in 10 povezav
+728 za 5 vozlišč
+1296 za 6 vozlišč in 5 povezav
+3660 za 6 vozlišč in 6 povezav
+5700 za 6 vozlišč in 7 povezav
+6165 za 6 vozlišč in 8 povezav
+4945 za 6 vozlišč in 9 povezav
+2997 za 6 vozlišč in 10 povezav
+1365 za 6 vozlišč in 11 povezav
+455 za 6 vozlišč in 12 povezav
+105 za 6 vozlišč in 13 povezav
+15 za 6 vozlišč in 14 povezav
+1 za 6 vozlišč in 15 povezav
+26704 za 6 vozlišč
+16807 za 7 vozlišč in 6 povezav
+68295 za 7 vozlišč in 7 povezav
+156555 za 7 vozlišč in 8 povezav
+258125 za 7 vozlišč in 9 povezav
+331506 za 7 vozlišč in 10 povezav
+343140 za 7 vozlišč in 11 povezav
+290745 za 7 vozlišč in 12 povezav
+202755 za 7 vozlišč in 13 povezav
+116175 za 7 vozlišč in 14 povezav
+54257 za 7 vozlišč in 15 povezav
+20349 za 7 vozlišč in 16 povezav
+5985 za 7 vozlišč in 17 povezav
+1330 za 7 vozlišč in 18 povezav
+210 za 7 vozlišč in 19 povezav
+21 za 7 vozlišč in 20 povezav
+1 za 7 vozlišč in 21 povezav
+1866256 za 7 vozlišč

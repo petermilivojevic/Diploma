@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.4.3)  3 APR 2024 10:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.4.3)  10 APR 2024 15:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -410,7 +410,8 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count291
 \l__pdf_internal_box=\box53
-) (Diploma_.aux)
+)
+No file Diploma_.aux.
 \openout1 = `Diploma_.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 81.
@@ -431,7 +432,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 81.
 LaTeX Font Info:    ... okay on input line 81.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 81.
 LaTeX Font Info:    ... okay on input line 81.
- (C:\Users\peter\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+(C:\Users\peter\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count292
 \scratchdimen=\dimen157
@@ -506,118 +507,61 @@ No file Diploma_.toc.
 
 ] [5] [6
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 85--89
-
- []
-
-[7{C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 152.
+] [7{C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 156.
  (C:\Users\peter\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-Underfull \hbox (badness 10000) in paragraph at lines 195--199
-
- []
-
-[8{C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
-<drevo_1.png, id=74, 591.8913pt x 591.8913pt>
+) [8{C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
+<drevo_1.png, id=73, 591.8913pt x 591.8913pt>
 File: drevo_1.png Graphic file (type png)
 <use drevo_1.png>
-Package pdftex.def Info: drevo_1.png  used on input line 233.
+Package pdftex.def Info: drevo_1.png  used on input line 237.
 (pdftex.def)             Requested size: 128.0387pt x 128.03989pt.
-<drevo_2.png, id=76, 591.8913pt x 591.8913pt>
+<drevo_2.png, id=75, 591.8913pt x 591.8913pt>
 File: drevo_2.png Graphic file (type png)
 <use drevo_2.png>
-Package pdftex.def Info: drevo_2.png  used on input line 234.
+Package pdftex.def Info: drevo_2.png  used on input line 238.
 (pdftex.def)             Requested size: 128.0387pt x 128.03989pt.
-<drevo_3.png, id=77, 591.8913pt x 591.8913pt>
+<drevo_3.png, id=76, 591.8913pt x 591.8913pt>
 File: drevo_3.png Graphic file (type png)
 <use drevo_3.png>
-Package pdftex.def Info: drevo_3.png  used on input line 235.
+Package pdftex.def Info: drevo_3.png  used on input line 239.
 (pdftex.def)             Requested size: 128.0387pt x 128.03989pt.
- [9 <./drevo_1.png> <./drevo_2.png> <./drevo_3.png>] [10]
-Overfull \hbox (14.9954pt too wide) detected at line 381
+ [9 <./drevo_1.png> <./drevo_2.png> <./drevo_3.png>] [10] [11]
+Overfull \hbox (14.9954pt too wide) detected at line 385
 []|
  []
 
-[11] [12]
-<vsota_premer_3.png, id=115, 591.8913pt x 591.8913pt>
+[12]
+<vsota_premer_3.png, id=113, 591.8913pt x 591.8913pt>
 File: vsota_premer_3.png Graphic file (type png)
 <use vsota_premer_3.png>
-Package pdftex.def Info: vsota_premer_3.png  used on input line 420.
+Package pdftex.def Info: vsota_premer_3.png  used on input line 424.
 (pdftex.def)             Requested size: 384.10959pt x 384.11064pt.
-<Plagiat.png, id=116, 297.5115pt x 271.0125pt>
+ [13 <./vsota_premer_3.png>]
+<Plagiat.png, id=123, 297.5115pt x 271.0125pt>
 File: Plagiat.png Graphic file (type png)
 <use Plagiat.png>
-Package pdftex.def Info: Plagiat.png  used on input line 440.
+Package pdftex.def Info: Plagiat.png  used on input line 444.
 (pdftex.def)             Requested size: 384.10959pt x 349.90944pt.
- [13 <./vsota_premer_3.png>]
-c:/Users/peter/OneDrive/Dokumenti/faks/Diploma/TEX/Diploma_.tex:483: Undefined control sequence.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 469.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 486.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 504--505
+
+ []
+
+c:/Users/peter/OneDrive/Dokumenti/faks/Diploma/TEX/Diploma_.tex:524: Undefined control sequence.
 <recently read> \multirow 
                           
-l.483     }
-           
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-c:/Users/peter/OneDrive/Dokumenti/faks/Diploma/TEX/Diploma_.tex:483: Misplaced \noalign.
-\hline ->\noalign 
-                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
-l.483     }
-           
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-c:/Users/peter/OneDrive/Dokumenti/faks/Diploma/TEX/Diploma_.tex:483: You can't use `\hrule' here except with leaders.
-\hline ->\noalign {\ifnum 0=`}\fi \hrule 
-                                         \@height \arrayrulewidth \futurelet...
-l.483     }
-           
-To put a horizontal rule in an hbox or an alignment,
-you should use \leaders or \hrulefill (see The TeXbook).
-
-c:/Users/peter/OneDrive/Dokumenti/faks/Diploma/TEX/Diploma_.tex:483: Missing number, treated as zero.
-<to be read again> 
-                   \futurelet 
-l.483     }
-           
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-c:/Users/peter/OneDrive/Dokumenti/faks/Diploma/TEX/Diploma_.tex:483: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \futurelet 
-l.483     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-
-c:/Users/peter/OneDrive/Dokumenti/faks/Diploma/TEX/Diploma_.tex:489: LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.489 
-      
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-c:/Users/peter/OneDrive/Dokumenti/faks/Diploma/TEX/Diploma_.tex:508: Undefined control sequence.
-<recently read> \multirow 
-                          
-l.508     }
+l.524     }
            
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -629,27 +573,23 @@ and I'll forget about whatever was undefined.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-c:/Users/peter/OneDrive/Dokumenti/faks/Diploma/TEX/Diploma_.tex:512: LaTeX Error: There's no line here to end.
+c:/Users/peter/OneDrive/Dokumenti/faks/Diploma/TEX/Diploma_.tex:528: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.512 
+l.528 
       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 514--517
-
- []
-
-c:/Users/peter/OneDrive/Dokumenti/faks/Diploma/TEX/Diploma_.tex:537: Undefined control sequence.
+[14 <./Plagiat.png>]
+c:/Users/peter/OneDrive/Dokumenti/faks/Diploma/TEX/Diploma_.tex:554: Undefined control sequence.
 <recently read> \multirow 
                           
-l.537     }
+l.554     }
            
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -657,9 +597,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[14 <./Plagiat.png>] [15] [16
 
-]
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[15] [16]
 No file Diploma_.ind.
 (Diploma_.aux)
  ***********
@@ -680,15 +621,15 @@ Package rerunfilecheck Info: Checksums for `Diploma_.out':
 (rerunfilecheck)             After:  4A1743B110A11BF3D1F7BF2E72C46523;874.
  ) 
 Here is how much of TeX's memory you used:
- 15564 strings out of 474486
- 241003 string characters out of 5743756
- 1974542 words of memory out of 5000000
- 37498 multiletter control sequences out of 15000+600000
+ 15560 strings out of 474486
+ 240883 string characters out of 5743756
+ 1961542 words of memory out of 5000000
+ 37496 multiletter control sequences out of 15000+600000
  635692 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 94i,13n,95p,1232b,2555s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 94i,13n,95p,596b,2555s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbsy10.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Diploma_.pdf (16 pages, 410854 bytes).
+Output written on Diploma_.pdf (16 pages, 409182 bytes).
 PDF statistics:
  245 PDF objects out of 1000 (max. 8388607)
  66 named destinations out of 1000 (max. 500000)

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.4.3)  3 APR 2024 10:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.4.3)  8 APR 2024 15:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -783,74 +783,139 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 85.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [3
 
-{C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}] [4
+{C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}] [4
 
 ] [5
 
 ] [6
 
-{C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}] [7
+{C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}]
+Overfull \vbox (1.04031pt too high) detected at line 160
+ []
+
+[7
 
 ] [8
 
 ] [9
 
-]
-Overfull \vbox (19.24821pt too high) detected at line 208
- []
+] [10
 
-[10
+] [11
 
 ]
-<drevo_1.png, id=103, 591.8913pt x 591.8913pt>
+<drevo_1.png, id=112, 591.8913pt x 591.8913pt>
 File: drevo_1.png Graphic file (type png)
 <use drevo_1.png>
-Package pdftex.def Info: drevo_1.png  used on input line 223.
+Package pdftex.def Info: drevo_1.png  used on input line 240.
 (pdftex.def)             Requested size: 102.21136pt x 102.20973pt.
-<drevo_2.png, id=105, 591.8913pt x 591.8913pt>
+<drevo_2.png, id=114, 591.8913pt x 591.8913pt>
 File: drevo_2.png Graphic file (type png)
 <use drevo_2.png>
-Package pdftex.def Info: drevo_2.png  used on input line 223.
+Package pdftex.def Info: drevo_2.png  used on input line 240.
 (pdftex.def)             Requested size: 102.21136pt x 102.20973pt.
-<drevo_3.png, id=106, 591.8913pt x 591.8913pt>
+<drevo_3.png, id=115, 591.8913pt x 591.8913pt>
 File: drevo_3.png Graphic file (type png)
 <use drevo_3.png>
-Package pdftex.def Info: drevo_3.png  used on input line 223.
+Package pdftex.def Info: drevo_3.png  used on input line 240.
 (pdftex.def)             Requested size: 102.21136pt x 102.20973pt.
- [11
+ [12
 
- <./drevo_1.png> <./drevo_2.png> <./drevo_3.png>] [12
-
-] [13
+ <./drevo_1.png> <./drevo_2.png> <./drevo_3.png>] [13
 
 ] [14
 
+] [15
+
 ]
-<vsota_premer_3.png, id=139, 591.8913pt x 591.8913pt>
+<vsota_premer_3.png, id=148, 591.8913pt x 591.8913pt>
 File: vsota_premer_3.png Graphic file (type png)
 <use vsota_premer_3.png>
-Package pdftex.def Info: vsota_premer_3.png  used on input line 294.
+Package pdftex.def Info: vsota_premer_3.png  used on input line 311.
 (pdftex.def)             Requested size: 170.35054pt x 170.35257pt.
- [15
+ [16
 
  <./vsota_premer_3.png>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 317.
+(Font)              <17.28> on input line 334.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 317.
- [16
-
-]
-<Plagiat.png, id=156, 297.5115pt x 271.0125pt>
-File: Plagiat.png Graphic file (type png)
-<use Plagiat.png>
-Package pdftex.def Info: Plagiat.png  used on input line 335.
-(pdftex.def)             Requested size: 170.35054pt x 155.18172pt.
+(Font)              <10> on input line 334.
  [17
 
- <./Plagiat.png>] [18
+]
+<Plagiat.png, id=167, 297.5115pt x 271.0125pt>
+File: Plagiat.png Graphic file (type png)
+<use Plagiat.png>
+Package pdftex.def Info: Plagiat.png  used on input line 352.
+(pdftex.def)             Requested size: 170.35054pt x 155.18172pt.
+ [18
+
+ <./Plagiat.png>] [19
 
 ]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 419.
+ [20
+
+] [21
+
+]
+<8_10_najslabsi.png, id=198, 591.8913pt x 591.8913pt>
+File: 8_10_najslabsi.png Graphic file (type png)
+<use 8_10_najslabsi.png>
+Package pdftex.def Info: 8_10_najslabsi.png  used on input line 459.
+(pdftex.def)             Requested size: 170.35054pt x 170.35257pt.
+ [22
+
+ <./8_10_najslabsi.png>]
+<ciklj_in_d.png, id=207, 281.853pt x 265.9536pt>
+File: ciklj_in_d.png Graphic file (type png)
+<use ciklj_in_d.png>
+Package pdftex.def Info: ciklj_in_d.png  used on input line 474.
+(pdftex.def)             Requested size: 136.28094pt x 128.59369pt.
+<d_in_cikelj.png, id=208, 200.1879pt x 279.6849pt>
+File: d_in_cikelj.png Graphic file (type png)
+<use d_in_cikelj.png>
+Package pdftex.def Info: d_in_cikelj.png  used on input line 474.
+(pdftex.def)             Requested size: 136.28094pt x 190.41367pt.
+ [23
+
+ <./ciklj_in_d.png> <./d_in_cikelj.png>]
+<imput_1.png, id=218, 372.1905pt x 281.1303pt>
+File: imput_1.png Graphic file (type png)
+<use imput_1.png>
+Package pdftex.def Info: imput_1.png  used on input line 490.
+(pdftex.def)             Requested size: 136.28094pt x 102.93558pt.
+<output_1.png, id=219, 372.1905pt x 281.1303pt>
+File: output_1.png Graphic file (type png)
+<use output_1.png>
+Package pdftex.def Info: output_1.png  used on input line 490.
+(pdftex.def)             Requested size: 136.28094pt x 102.93558pt.
+<output_2.png, id=220, 372.1905pt x 281.1303pt>
+File: output_2.png Graphic file (type png)
+<use output_2.png>
+Package pdftex.def Info: output_2.png  used on input line 490.
+(pdftex.def)             Requested size: 136.28094pt x 102.93558pt.
+ [24
+
+ <./imput_1.png> <./output_1.png> <./output_2.png>]
+File: imput_1.png Graphic file (type png)
+<use imput_1.png>
+Package pdftex.def Info: imput_1.png  used on input line 506.
+(pdftex.def)             Requested size: 136.28094pt x 102.93558pt.
+<output_3.png, id=231, 372.1905pt x 281.1303pt>
+File: output_3.png Graphic file (type png)
+<use output_3.png>
+Package pdftex.def Info: output_3.png  used on input line 506.
+(pdftex.def)             Requested size: 136.28094pt x 102.93558pt.
+<output_4.png, id=232, 372.1905pt x 281.1303pt>
+File: output_4.png Graphic file (type png)
+<use output_4.png>
+Package pdftex.def Info: output_4.png  used on input line 506.
+(pdftex.def)             Requested size: 136.28094pt x 102.93558pt.
+ [25
+
+ <./output_3.png> <./output_4.png>]
 \tf@nav=\write5
 \openout5 = `Dolga_predstavitev.nav'.
 
@@ -867,17 +932,17 @@ L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 23836 strings out of 474486
- 466987 string characters out of 5743756
+ 23959 strings out of 474486
+ 469166 string characters out of 5743756
  1939542 words of memory out of 5000000
- 45548 multiletter control sequences out of 15000+600000
- 591107 words of font info for 79 fonts, out of 8000000 for 9000
+ 45651 multiletter control sequences out of 15000+600000
+ 596712 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,16n,123p,668b,801s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on Dolga_predstavitev.pdf (18 pages, 350488 bytes).
+ 128i,16n,123p,461b,801s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on Dolga_predstavitev.pdf (25 pages, 517124 bytes).
 PDF statistics:
- 245 PDF objects out of 1000 (max. 8388607)
- 37 named destinations out of 1000 (max. 500000)
- 80 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 321 PDF objects out of 1000 (max. 8388607)
+ 51 named destinations out of 1000 (max. 500000)
+ 126 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,102 @@
+Ravnovesje max
+
+1 za 2 vozlišč in 1 povezav
+1 za 2 vozlišč
+1 za 3 vozlišč in 2 povezav
+1 za 3 vozlišč in 3 povezav
+2 za 3 vozlišč
+1 za 4 vozlišč in 3 povezav
+1 za 4 vozlišč in 4 povezav
+0 za 4 vozlišč in 5 povezav
+1 za 4 vozlišč in 6 povezav
+3 za 4 vozlišč
+1 za 5 vozlišč in 4 povezav
+1 za 5 vozlišč in 5 povezav
+1 za 5 vozlišč in 6 povezav
+0 za 5 vozlišč in 7 povezav
+0 za 5 vozlišč in 8 povezav
+0 za 5 vozlišč in 9 povezav
+1 za 5 vozlišč in 10 povezav
+4 za 5 vozlišč
+2 za 6 vozlišč in 5 povezav
+1 za 6 vozlišč in 6 povezav
+1 za 6 vozlišč in 7 povezav
+1 za 6 vozlišč in 8 povezav
+1 za 6 vozlišč in 9 povezav
+0 za 6 vozlišč in 10 povezav
+0 za 6 vozlišč in 11 povezav
+0 za 6 vozlišč in 12 povezav
+0 za 6 vozlišč in 13 povezav
+0 za 6 vozlišč in 14 povezav
+1 za 6 vozlišč in 15 povezav
+7 za 6 vozlišč
+2 za 7 vozlišč in 6 povezav
+3 za 7 vozlišč in 7 povezav
+0 za 7 vozlišč in 8 povezav
+3 za 7 vozlišč in 9 povezav
+2 za 7 vozlišč in 10 povezav
+0 za 7 vozlišč in 11 povezav
+1 za 7 vozlišč in 12 povezav
+0 za 7 vozlišč in 13 povezav
+0 za 7 vozlišč in 14 povezav
+0 za 7 vozlišč in 15 povezav
+0 za 7 vozlišč in 16 povezav
+0 za 7 vozlišč in 17 povezav
+0 za 7 vozlišč in 18 povezav
+0 za 7 vozlišč in 19 povezav
+0 za 7 vozlišč in 20 povezav
+1 za 7 vozlišč in 21 povezav
+12 za 7 vozlišč
+3 za 8 vozlišč in 7 povezav
+3 za 8 vozlišč in 8 povezav
+1 za 8 vozlišč in 9 povezav
+4 za 8 vozlišč in 10 povezav
+4 za 8 vozlišč in 11 povezav
+4 za 8 vozlišč in 12 povezav
+2 za 8 vozlišč in 13 povezav
+0 za 8 vozlišč in 14 povezav
+1 za 8 vozlišč in 15 povezav
+1 za 8 vozlišč in 16 povezav
+0 za 8 vozlišč in 17 povezav
+0 za 8 vozlišč in 18 povezav
+0 za 8 vozlišč in 19 povezav
+0 za 8 vozlišč in 20 povezav
+0 za 8 vozlišč in 21 povezav
+0 za 8 vozlišč in 22 povezav
+0 za 8 vozlišč in 23 povezav
+0 za 8 vozlišč in 24 povezav
+0 za 8 vozlišč in 25 povezav
+0 za 8 vozlišč in 26 povezav
+0 za 8 vozlišč in 27 povezav
+1 za 8 vozlišč in 28 povezav
+24 za 8 vozlišč
+3 za 9 vozlišč in 8 povezav
+5 za 9 vozlišč in 9 povezav
+3 za 9 vozlišč in 10 povezav
+3 za 9 vozlišč in 11 povezav
+1 za 9 vozlišč in 12 povezav
+5 za 9 vozlišč in 13 povezav
+7 za 9 vozlišč in 14 povezav
+4 za 9 vozlišč in 15 povezav
+3 za 9 vozlišč in 16 povezav
+2 za 9 vozlišč in 17 povezav
+1 za 9 vozlišč in 18 povezav
+0 za 9 vozlišč in 19 povezav
+1 za 9 vozlišč in 20 povezav
+0 za 9 vozlišč in 21 povezav
+0 za 9 vozlišč in 22 povezav
+0 za 9 vozlišč in 23 povezav
+0 za 9 vozlišč in 24 povezav
+0 za 9 vozlišč in 25 povezav
+0 za 9 vozlišč in 26 povezav
+0 za 9 vozlišč in 27 povezav
+0 za 9 vozlišč in 28 povezav
+0 za 9 vozlišč in 29 povezav
+0 za 9 vozlišč in 30 povezav
+0 za 9 vozlišč in 31 povezav
+0 za 9 vozlišč in 32 povezav
+0 za 9 vozlišč in 33 povezav
+0 za 9 vozlišč in 34 povezav
+0 za 9 vozlišč in 35 povezav
+1 za 9 vozlišč in 36 povezav
+39 za 9 vozlišč

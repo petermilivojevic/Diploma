@@ -1,0 +1,31 @@
+remove_all -> add: drevesa
+1 za 2 vozlišč in 1 povezav
+1 za 2 vozlišč
+3 za 3 vozlišč in 2 povezav
+0 za 3 vozlišč in 3 povezav
+3 za 3 vozlišč
+16 za 4 vozlišč in 3 povezav
+12 za 4 vozlišč in 4 povezav
+6 za 4 vozlišč in 5 povezav
+0 za 4 vozlišč in 6 povezav
+34 za 4 vozlišč
+125 za 5 vozlišč in 4 povezav
+210 za 5 vozlišč in 5 povezav
+175 za 5 vozlišč in 6 povezav
+109 za 5 vozlišč in 7 povezav
+42 za 5 vozlišč in 8 povezav
+10 za 5 vozlišč in 9 povezav
+0 za 5 vozlišč in 10 povezav
+671 za 5 vozlišč
+1296 za 6 vozlišč in 5 povezav
+3540 za 6 vozlišč in 6 povezav
+5160 za 6 vozlišč in 7 povezav
+5278 za 6 vozlišč in 8 povezav
+4251 za 6 vozlišč in 9 povezav
+2666 za 6 vozlišč in 10 povezav
+1265 za 6 vozlišč in 11 povezav
+431 za 6 vozlišč in 12 povezav
+99 za 6 vozlišč in 13 povezav
+15 za 6 vozlišč in 14 povezav
+0 za 6 vozlišč in 15 povezav
+24001 za 6 vozlišč

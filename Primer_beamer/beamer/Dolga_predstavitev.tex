@@ -39,10 +39,10 @@
 
 
 \title{(Osnovne) Igre ustvarjanja omrežja}
-\subtitle{Kratka predstavitev diplome}
+\subtitle{Dolga predstavitev diplome}
 \author{Peter Milivojević}
 \institute[FMF]{Fakulteta za matematiko in fiziko}
-\date{11. \ januar \ 2024}
+\date{8. \ april \ 2024}
 
 \begin{document}
 
@@ -59,11 +59,11 @@
   \frametitle{(Osnovne) Igre ustvarjanja omrežja}
   Omrežje lahko ustvarimo na več načinov in pri različnih optimizacijskih pogojih.
   Omrežje lahko ustvari centralna avtoriteta in tako doseže socialni optimum ali pa
-  več sebičnih igralcev, kjer vsak poskuša doseči svoj sebični optimum v dani situaciji.
+  več igralcev, kjer vsak poskuša doseči svoj sebični optimum v dani situaciji.
   V diplomski nalogi se bom pretežno ukvarjal z dvema verzijama osnovnih iger ustvarjanja omrežja:
   \vspace{1mm}
   \begin{itemize}
-    \item Maksimalna oddaljenos
+    \item Maksimalna oddaljenost
     \item Vsota oddaljenosti oz. povprečna oddaljenost
   \end{itemize}
 
@@ -75,11 +75,11 @@
    
     \frametitle{Uporabne definicije}
     \begin{definicija}
-    $Graf$ je urejen par G = (V, E), kjer je V neprazna množica točk grafa G in E množica povezav grafa G, pričemer je vsaka povezava par točk.
+    $Graf$ je urejen par $G = (V, E)$, kjer je V neprazna množica točk grafa G in E množica povezav grafa G, pri čemer je vsaka povezava par točk.
     \end{definicija}
 
     \begin{definicija}
-    $Graf$ G je povezan, če za vsak par voclišč $u, v \in V(G)$ obstaja pot od $u$ do $v$.
+    $Graf$ G je povezan, če za vsak par vozlišč $u, v \in V(G)$ obstaja pot od $u$ do $v$.
     \end{definicija}
 
 \end{frame}
@@ -110,12 +110,10 @@
     \end{definicija}
     
     \begin{definicija}
-    Naj bo $G$ povezan graf. Lokalni premer točke $v$ grafa $G$ je definiran kot $\text{diam}(G) = \max_{u \in V(G)} d(u, v)$, kjer je $d(u, v)$ razdalja med vozliščema $u$ in $v$ v grafu $G$.
+    Naj bo $G$ povezan graf. Lokalni premer točke $v$ grafa $G$ je definiran kot $\epsilon_G(v) = \max_{u \in V(G)} d(u, v)$, kjer je $d(u, v)$ razdalja med vozliščema $u$ in $v$ v grafu $G$.
     \end{definicija}
     
-    \begin{definicija}
-    Povezan graf $G$ ima prerezno vozlišče $v$, če graf $G - v$ ni povezan.
-    \end{definicija}
+    
 
 \end{frame}
 % -------------------------------------------------------------------
@@ -125,13 +123,11 @@
    
     \frametitle{Uporabne definicije}
     \begin{definicija}
-    Povezanost po povezavah $\lambda(G)$ povezanega grafa $G$ je najmanjše število povezav,
-    z odstranitvijo katerih postane graf $G$ nepovezan. Če je $\lambda(G) \geq k$,
-    je graf $G$ po povezavah $k$-povezan.
+    Povezan graf $G$ ima prerezno vozlišče $v$, če graf $G - v$ ni povezan.
     \end{definicija}
 
     \begin{definicija}
-    Naj bo $G$ povezan graf z n vozlišči. Weinerjev indeks $W = W(G)$ je definiran
+    Naj bo $G$ povezan graf z n vozlišči. Wienerjev indeks $W = W(G)$ je definiran
     kot vsota vseh razdalj med vozlišči.
     $$W(G) = \sum_{i=1}^{n} \sum_{j=1}^{i} d_{ij} = \frac{1}{2} \sum_{i=1}^{n} \sum_{j=1}^{n} d_{ij}$$
     kjer $d_{ij}$ označuje dolžino najkrajše poti med vozliščem $i$ in $j$.
@@ -143,16 +139,40 @@
 % -------------------------------------------------------------------
 \begin{frame}
    
+  \frametitle{Strateška igra}
+  \begin{definicija}
+    Strateška igra s funkcijo preferenc je trojica $(N, (A_i)_{i\in N} , (u_i)_{i\in N})$ pri čemer:
+\begin{itemize}
+    \item $N$ je množica igralcev, v našem primeru je to število točk v grafu
+    \item Za vsakega igralca $i \in N$ je $A_i$ neprazna množica njegovih akcij, med katerimi v danem trenutku izbera igralec $i$
+    \item Za vsakega igralca $i \in N$ je $u_i$ funkcija preferenc na $A_i$. Torej $u_i : A_i \to \mathbb{R}$ v splošnem in $u_i : A_i \to \mathbb{N}$ v našem primeru.
+\end{itemize}
+\end{definicija}
+Za funkcijo preferenc lahko zapišemo sledeče relacije.
+
+$\forall a,b \in A_i:$
+\begin{itemize}
+    \item $(u(a) \geq u(b) \Rightarrow a)$ je vsaj tako dobro kot $b$
+    \item $(u(a) > u(b) \Rightarrow a)$ je boljše kot $b$
+    \item $(u(a) = u(b) \Rightarrow b)$ indiferenten med $a$ in $b$
+\end{itemize}
+
+\end{frame}
+% -------------------------------------------------------------------
+
+% -------------------------------------------------------------------
+\begin{frame}
+   
     \frametitle{Definiciji ravnovesja}
     \begin{definicija}
     Graf je v \textit{ravnotežju glede na vsoto razdalj}, če za vsako povezavo $vw$ in
-    za vsako vozlišče $w'$ zamenjava povezave $vw$ z povezavo $vw'$ ne zmanjša
+    za vsako vozlišče $w'$ zamenjava povezave $vw$ s povezavo $vw'$ ne zmanjša
     celotne vsote razdalj od vozlišča $v$ do vseh ostalih vozlišč.
     \end{definicija}
         
     \begin{definicija}
     Graf je v \textit{ravnotežju glede na maksimalno razdaljo}, če za vsako povezavo $vw$
-    in za vsako vozlišče $w'$ zamenjava povezave $vw$ z povezavo $vw'$ ne zmanjša
+    in za vsako vozlišče $w'$ zamenjava povezave $vw$ s povezavo $vw'$ ne zmanjša
     lokalnega premera vozlišča $v$. Nadalje odstranitev povezave $vw$ poveča
     lokalni premer vozlišča $v$.
     \end{definicija}
@@ -163,7 +183,7 @@
 % -------------------------------------------------------------------
 \begin{frame}
    
-    \frametitle{Kritičnost in stabilnost}  
+    \frametitle{Definiciji kritičnosti in stabilnosti}  
     \begin{definicija}
     Naj bo $G$ povezan graf. Graf $G$ je \textit{kritičen za odstranitev povezave},
     če odstranitev katere koli povezave $uv \in E(G)$ poveča lokalni premer vozlišča $v$ in vozlišča $u$.
@@ -180,11 +200,12 @@
 % -------------------------------------------------------------------
 \begin{frame}
 
-  Upoštevajte igro \( G = (N, S, u) \), ki jo določa množica igralcev \( N \), strategijski nabori \( S_i \) za vsakega igralca in uporabnosti \( u_i : S \to \mathbb{R}\), kjer je \( S = S_1 \times \ldots \times S_N\). To imenujemo tudi množica izidov. Lahko definiramo merilo učinkovitosti vsakega izida, ki mu pravimo funkcija blaginje Welf(s):\( s\to \mathbb{R}\). Naravni kandidati vključujejo vsoto uporabnosti igralcev (utilitarni cilj)\( Welf(s)=\sum_{i\in N}u_i(s)\), minimalno uporabnost (cilj pravičnosti ali egalitarni cilj)\( Welf(s)=\min_{i\in N}u_i(s)\).
-
-
-Podmnožico Equil\( C_s\) lahko definiramo kot množico strategij v ravnovesju. Cena anarhije je potem definirana kot razmerje med optimalno 'centralizirano' rešitvijo in najslabšim 'ravnovesjem':
-
+  \frametitle{Ceni anarhije in stabilnosti}
+  Ceni anarhije (PoA) in stabilnosti (PoS) merita, kako se učinkovitost sistema poslabša zaradi sebičnega vedenja njegovih igralcev.
+  Cena anarhije je razmerje med vrednostjo/ceno, iz socialnega vidika (skupnega vidika vseh igralcev), najslabšega ravnovesja in socialno ceno optimalnega izida.
+  Cena stabilnosti igre pa je razmerje med najboljšo socialno ceno ravnovesja in socialno ceno optimalnega izida.\\
+  Socialno ceno grafa bomo definirali kot vsoto cen vseh vozlišč. Za igro vsote bomo tako socialno ceno definirali kot $SC(G) = 2W(G)$,
+  za igro lokalnega premera pa kot $SC(G) = \sum_{i=1}^{n}\epsilon_G(i)$.
 \end{frame}
 % -------------------------------------------------------------------
 
@@ -192,19 +213,15 @@ Podmnožico Equil\( C_s\) lahko definiramo kot množico strategij v ravnovesju. 
 \begin{frame}
 
   \frametitle{Ceni anarhije in stabilnosti}
-  V delu se bomo ukvarjalise tudi z ceno anarhije (PoA) in ceno stabilnosti (PoS).
-  Ceni anarhije in stabilnosti merita, kako se učinkovitost sistema poslabša zaradi sebičnega vedenja njegovih agentov.
-  Cena anarhije je razmerje med vrednostjo/ceno, iz socialnega vidika (skupnega vidika vseh igralcev), najslabšega ravnovesja in socialno ceno optimalnega izida
-  Cena stabilnosti igre pa je razmerje med najboljšo socialno ceno ravnovesja in socialno ceno optimalnega izida.
-  V našem primeru sta definirani kot:
+  Tako lahko definiramo sledeče:
   \begin{definicija}
-    $PoA = \frac{\text{Cena najslabšega ravnovesja}}{\text{Cena optimalne postavitve}} = \frac{\max_{s\in Equil} Cost(s)}{\min_{s\in S} Cost(s)}$
-    $=\frac{\max_{s\in Equil} Cost(s)}{\min_{s\in S} Cost(s)}$
+    $PoA = \frac{\text{Socialna cena najslabšega ravnovesja}}{\text{Socialna cena optimalne postavitve}} = \frac{\max_{G\in R} SC(G)}{\min_{G\in A} SC(G)}$
   \end{definicija}
   \begin{definicija}
-    $PoA = \frac{\text{Cena najboljšega ravnovesja}}{\text{Cena optimalne postavitve}} = \frac{\min_{s\in Equil} Cost(s)}{\min_{s\in S} Cost(s)}$
+    $PoS = \frac{\text{Socialna cena najboljšega ravnovesja}}{\text{Socialna cena optimalne postavitve}} = \frac{\min_{G\in R} SC(G)}{\min_{G\in A} SC(G)}$
   \end{definicija}
-
+  Kjer $A$ predstavlja množico vseh možnih povezanih grafov z $|V(G)| = n$ vozlišči in manj ali enako kot $|E(G)| = m$ povezavami.
+  Množica $R \subseteq A$ pa predstavlja množico vseh ravnovesnih grafov, ki lahko nastanejo iz začetnih grafov z $n$ vozlišči in $m$ povezavami.
 \end{frame}
 % -------------------------------------------------------------------
 
@@ -238,7 +255,7 @@ Podmnožico Equil\( C_s\) lahko definiramo kot množico strategij v ravnovesju. 
   \end{lema}
 
   \begin{izrek}
-    Če je ravnovesni graf za maksimalno razdaljo drevo, potem ima premer največ $3$.
+    Če je ravnovesni graf za maksimalno razdaljo drevo, potem je premer ravnovesnega grafa največ $3$.
   \end{izrek}
 
 \end{frame}
@@ -250,11 +267,11 @@ Podmnožico Equil\( C_s\) lahko definiramo kot množico strategij v ravnovesju. 
   \frametitle{Skupna vsota razdalj: spodnje meje}
   \begin{lema}
     Za vozlišče $v$ z lokalnim premerom $2$, zamenjava sosednje povezave ne izboljša
-    vsote razdalj od $v$ do vseh ostalih voclišč. Prav tako tudi svojega lokalnega premera ne more izboljšati.
+    vsote razdalj od $v$ do vseh ostalih vozlišč. Prav tako tudi svojega lokalnega premera ne more izboljšati.
   \end{lema}
   \begin{posledica}
-    Vsak graf z premerom $2$ ali manj je v \textit{ravnotežju glede na vsoto razdalj}.
-    In hkrati socialni optimum, zato je vena stabilnosti 1.
+    Vsak graf s premerom $2$ ali manj je v \textit{ravnotežju glede na vsoto razdalj}
+    in hkrati socialni optimum, zato je cena stabilnosti 1.
   \end{posledica}
   
 \end{frame}
@@ -271,7 +288,7 @@ Podmnožico Equil\( C_s\) lahko definiramo kot množico strategij v ravnovesju. 
   \begin{posledica}
     Za vsak graf $G$ z $n$ vozlišči, $m$ povezavami in premerom večjim od $2$ velja:
     $$W(G) \geq n^2 - n - m + 1.$$
-    Enačaj velja kadar ima graf $G$ natanko $2$ vozlišča z lokalnim premerom $3$ in vsa ostala vozlišča z lokalnim premerom $2$.
+    Enačaj velja kadar ima graf $G$ natanko $2$ vozlišči z lokalnim premerom $3$ in vsa ostala vozlišča z lokalnim premerom $2$.
   \end{posledica}
   
 \end{frame}
@@ -298,15 +315,15 @@ Podmnožico Equil\( C_s\) lahko definiramo kot množico strategij v ravnovesju. 
 % -------------------------------------------------------------------
 \begin{frame}
    
-  \frametitle{Skupna vsota razdalj: zgornja meja $2^{O(\sqrt{\lg n})}$}
+  \frametitle{Skupna vsota razdalj: zgornja meja $2^{O(\sqrt{\log_2 n})}$}
   \begin{izrek}
-    Vsak ravnovesni graf za skupno vsoto razdalj ima premer $2^{O(\sqrt{\lg n})}$.
+    Vsak ravnovesni graf za skupno vsoto razdalj ima premer $2^{O(\sqrt{\log_2 n})}$.
   \end{izrek}
 
   \begin{lema}
-    Vsak ravnovesni graf za skupno vsoto razdalj ima premer največ $2 \lg n$ ali
-    za vsako vozlišče $v$ obstaja povezava $xy$ kjer je $d(u, x) \leq \lg n$ in
-    zamenjava povezave $xy$ zmanjša vsoto razdalj od $x$ za največ $2n(1 + \lg n)$.
+    Vsak ravnovesni graf za skupno vsoto razdalj ima premer največ $2 \log_2 n$ ali
+    za vsako vozlišče $v$ obstaja povezava $xy$, kjer je $d(u, x) \leq \log_2 n$ in
+    zamenjava povezave $xy$ zmanjša vsoto razdalj od $x$ za največ $2n(1 + \log_2 n)$.
   \end{lema}
 
   \begin{lema}
@@ -324,7 +341,7 @@ Podmnožico Equil\( C_s\) lahko definiramo kot množico strategij v ravnovesju. 
   \begin{columns}
     \column{0.5\textwidth}
     \begin{izrek}
-        Obstaja ravnovesni graf za maksimalno razdaljo z premerom $\Theta(\sqrt{n})$.
+        Obstaja ravnovesni graf za maksimalno razdaljo s premerom $\Theta(\sqrt{n})$.
     \end{izrek}
     \column{0.5\textwidth}
     \includegraphics[width=1\textwidth]{Plagiat.png}
@@ -340,21 +357,155 @@ Podmnožico Equil\( C_s\) lahko definiramo kot množico strategij v ravnovesju. 
 
   \frametitle{Povezava z grafi z enotsko razdaljo}
   \begin{izrek}
-    Vsak ravnovesni graf za skupno vsoto razdaljo $G$ z $n \geq 24$ vozlišč in
-    premerom $d > 2 \lg n$ inducira podgraf z $\epsilon\text{-skoraj-enotno-razdaljo } G'$
-    z $n$ vozlišči in premerom $\Theta\left(\frac{\varepsilon d}{\lg n}\right)$ in
+    Vsak ravnovesni graf $G$ za skupno vsoto razdalj z $n \geq 24$ vozlišč in
+    premerom $d > 2 \log_2 n$ inducira podgraf z $\epsilon\text{-skoraj-enotno-razdaljo } G'$
+    z $n$ vozlišči in premerom $\Theta\left(\frac{\varepsilon d}{\log_2 n}\right)$ in
     podgraf z $\epsilon\text{-enotno-razdaljo } G'$ z $n$ vozlišči in premerom
-    $\Theta\left(\frac{\varepsilon d}{\lg^2 n}\right)$.
+    $\Theta\left(\frac{\varepsilon d}{\log_2^2 n}\right)$.
   \end{izrek}
 
   \begin{domneva}
-    Razdaljno skoraj enotni grafi imajo premer $O(\lg n)$.
+    Razdaljno skoraj enotni grafi imajo premer $O(\log_2 n)$.
   \end{domneva}
 
 
 \end{frame}
 % -------------------------------------------------------------------
 
+
+
+
+
+% -------------------------------------------------------------------
+\begin{frame}
+
+  \frametitle{Testiranje števila ravnovesji}
+  \begin{columns}
+    \column{0.5\textwidth}
+    \begin{table}
+    \scriptsize
+    \begin{tabular}{ll}
+        Št. ravnovesnih grafov & Št. vozlišč\\
+        1                      & 1          \\
+        1                      & 2          \\
+        2                      & 3          \\
+        3                      & 4          \\
+        4                      & 5          \\
+        7                      & 6          \\
+        12                     & 7          \\
+        24                     & 8          
+    \end{tabular}
+    \caption{Maks verzija}
+    \end{table}
+    \column{0.5\textwidth}
+    \begin{table}
+    \scriptsize
+    \begin{tabular}{ll}
+      Št. ravnovesnih grafov & Št. vozlišč\\
+      1                      & 1          \\
+      1                      & 2          \\
+      2                      & 3          \\
+      5                      & 4          \\
+      15                     & 5          \\
+      60                     & 6          \\
+      374                    & 7          \\
+      4161                   & 8         
+    \end{tabular}
+    \caption{Verzija vsote}
+    \end{table}
+\end{columns}
+
+
+\end{frame}
+% -------------------------------------------------------------------
+
+% -------------------------------------------------------------------
+\begin{frame}
+
+  \frametitle{Socialni optimum maks verzije}
+  \begin{table}
+  \tiny
+  \begin{tabular}{rrrrrrrrrrrr}
+\hline
+   n\textbackslash{}e &   n + -1 &   n  &   n + 1 &   n + 2 &   n + 3 &   n + 4 &   n + 5 &   n + 6 &   n + 7 &   n + 8 &   n + 9 \\
+\hline
+     2 &        2 &         &         &         &         &         &         &         &         &         &         \\
+     3 &        5 &       3 &         &         &         &         &         &         &         &         &         \\
+     4 &        7 &       7 &       6 &       4 &         &         &         &         &         &         &         \\
+     5 &        9 &       9 &       9 &       8 &       8 &       7 &       5 &         &         &         &         \\
+     6 &       11 &      11 &      11 &      11 &      10 &      10 &      10 &       9 &       9 &       8 &       6 \\
+\hline
+\end{tabular}
+\caption{Socialni optimum maks verzije}
+\end{table}
+
+\end{frame}
+% -------------------------------------------------------------------
+
+% -------------------------------------------------------------------
+\begin{frame}
+  
+  \frametitle{Cena anarhije igre vsote}
+  \begin{columns}
+    \column{0.5\textwidth}
+    Pri testiranju grafov do $8$ vozlišč je bila pri večini grafov cena anarhije enaka $1$.
+    Izjema so bili grafi z $8$ vozlišči in $10, 11 $ oziroma $12$ povezavami. Cena anarhije je bila
+    $\frac{100}{92} = \frac{25}{23}$ za $10$ povezav, $\frac{94}{90} = \frac{47}{45}$ za $11$ povezav
+    in $\frac{90}{88} = \frac{45}{44}$  za $12$ povezav.
+    \column{0.5\textwidth}
+    \includegraphics[width=1\textwidth]{8_10_najslabsi.png}
+  \end{columns}
+  
+\end{frame}
+
+% -------------------------------------------------------------------
+
+% -------------------------------------------------------------------
+\begin{frame}
+  
+  \frametitle{Razlike v algoritmih}
+  \begin{columns}
+    \column{0.5\textwidth}
+    \includegraphics[width=0.8\textwidth]{ciklj_in_d.png}
+    \column{0.5\textwidth}
+    \includegraphics[width=0.8\textwidth]{d_in_cikelj.png}
+  \end{columns}
+  
+\end{frame}
+
+% -------------------------------------------------------------------
+
+% -------------------------------------------------------------------
+\begin{frame}
+  
+  \frametitle{Igra vsote v prostoru}
+  \begin{columns}
+    \column{0.5\textwidth}
+    \includegraphics[width=0.8\textwidth]{imput_1.png}
+    \column{0.5\textwidth}
+    \includegraphics[width=0.8\textwidth]{output_1.png}
+    \includegraphics[width=0.8\textwidth]{output_2.png}
+  \end{columns}
+  
+\end{frame}
+
+% -------------------------------------------------------------------
+
+% -------------------------------------------------------------------
+\begin{frame}
+  
+  \frametitle{Igra maksimalne razdalje v prostoru}
+  \begin{columns}
+    \column{0.5\textwidth}
+    \includegraphics[width=0.8\textwidth]{imput_1.png}
+    \column{0.5\textwidth}
+    \includegraphics[width=0.8\textwidth]{output_3.png}
+    \includegraphics[width=0.8\textwidth]{output_4.png}
+  \end{columns}
+  
+\end{frame}
+
+% -------------------------------------------------------------------
 
 
 
