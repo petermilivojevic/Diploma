@@ -1,11 +1,11 @@
 # Fdb version 4
-["makeindex Diploma_.idx"] 1718641100.48549 "Diploma_.idx" "Diploma_.ind" "Diploma_" 1718641101.11937 2
-  "Diploma_.idx" 0 -1 0 "pdflatex"
+["makeindex Diploma_.idx"] 1718641243.36783 "Diploma_.idx" "Diploma_.ind" "Diploma_" 1718641253.54958 0
+  "Diploma_.idx" 1718641249 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "Diploma_.ilg"
   "Diploma_.ind"
   (rewritten before read)
-["pdflatex"] 1718641095.0892 "c:/Faks/Diploma/TEX/Diploma_.tex" "Diploma_.pdf" "Diploma_" 1718641101.11997 2
+["pdflatex"] 1718641249.22266 "c:/Faks/Diploma/TEX/Diploma_.tex" "Diploma_.pdf" "Diploma_" 1718641253.5501 2
   "C:/Users/peter/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1712422124 82686 2381c3433487640bf26aa76a10db7eb2 ""
   "C:/Users/peter/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1712133357 24225045 1fb21cc42331ee31ad8a678ffc60de92 ""
   "C:/Users/peter/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
@@ -282,19 +282,19 @@
   "C:/Users/peter/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/peter/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "C:/Users/peter/AppData/Local/Programs/MiKTeX/tex/latex/xmpincl/xmpincl.sty" 1633254124 2832 d498c59e94b7dfa3b4bcf74380ad6348 ""
-  "Diploma_.aux" 0 -1 0 "pdflatex"
+  "Diploma_.aux" 1718641253 2577 1bd63a98aab39085225ff10b5527bbeb "pdflatex"
   "Diploma_.ind" 0 -1 0 "makeindex Diploma_.idx"
-  "Diploma_.out" 0 -1 0 "pdflatex"
+  "Diploma_.out" 1718641253 1162 bbfbb2f9e35a0c253a938316b367e1fc "pdflatex"
   "Diploma_.tex" 1718639371 46875 aa3d97ba2543cfe8d3c9d04cb5f58ed3 ""
-  "Diploma_.toc" 0 -1 0 "pdflatex"
-  "Diploma_.xmpdata" 1718641096 155 b5a2829767c7ca8d13d6e3957726f3ae "pdflatex"
+  "Diploma_.toc" 1718641253 1030 5e1a8d775dcc215d72f4bf046553b189 "pdflatex"
+  "Diploma_.xmpdata" 1718641250 155 b5a2829767c7ca8d13d6e3957726f3ae "pdflatex"
   "Plagiat.png" 1712128875 39197 fa56c5582a771005338c8c8670590284 ""
   "c:/Faks/Diploma/TEX/Diploma_.tex" 1718639371 46875 aa3d97ba2543cfe8d3c9d04cb5f58ed3 ""
   "drevo_1.png" 1712128875 30753 c2f0f5e7800c4ffc80affeb78b753030 ""
   "drevo_2.png" 1712128875 32289 c57be2689023c302ba508e38e102d1f3 ""
   "drevo_3.png" 1712128875 35457 571ad4ccb3769202e04ad54d1cedcd54 ""
   "fmfdelo.cls" 1712128875 22309 1e74fe24a81891defb64cb0b0ee32a4d ""
-  "pdfa.xmpi" 1718641097 5478 6aca6560d2a29825bb82fcee02a9b532 "pdflatex"
+  "pdfa.xmpi" 1718641251 5478 956b5abdca9fda2ed3b87aed589d649f "pdflatex"
   "vsota_premer_3.png" 1712128875 42151 23598bc8287321cada08ba271cfd8142 ""
   (generated)
   "Diploma_.aux"
@@ -306,3 +306,5 @@
   "Diploma_.xmpdata"
   "pdfa.xmpi"
   (rewritten before read)
+  "Diploma_.xmpdata"
+  "pdfa.xmpi"
