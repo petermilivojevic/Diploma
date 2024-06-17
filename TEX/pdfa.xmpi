@@ -62,7 +62,7 @@
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> 
    <dc:format>application/pdf</dc:format> 
-   <dc:title><rdf:Alt><rdf:li xml:lang="x-default">Igre ustvarjanja omrežji</rdf:li></rdf:Alt></dc:title>
+   <dc:title><rdf:Alt><rdf:li xml:lang="x-default">Igre ustvarjanja omrežij</rdf:li></rdf:Alt></dc:title>
    <dc:creator><rdf:Seq><rdf:li>Peter Milivojević</rdf:li></rdf:Seq></dc:creator>
    <dc:description><rdf:Alt><rdf:li xml:lang="x-default">Delo diplomskega seminarja, Finančna matematika, ..., ...</rdf:li></rdf:Alt></dc:description>
    <dc:subject><rdf:Bag><rdf:li>...</rdf:li>
@@ -78,15 +78,15 @@
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> 
    <xmp:CreatorTool>LaTeX with hyperref</xmp:CreatorTool> 
-   <xmp:ModifyDate>2024-04-10T15:15:20+02:00</xmp:ModifyDate> 
-   <xmp:CreateDate>2024-04-10T15:15:20+02:00</xmp:CreateDate> 
-   <xmp:MetadataDate>2024-04-10T15:15:20+02:00</xmp:MetadataDate> 
+   <xmp:ModifyDate>2024-06-17T17:49:38+02:00</xmp:ModifyDate> 
+   <xmp:CreateDate>2024-06-17T17:49:38+02:00</xmp:CreateDate> 
+   <xmp:MetadataDate>2024-06-17T17:49:38+02:00</xmp:MetadataDate> 
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmpRights = "http://ns.adobe.com/xap/1.0/rights/"> 
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"> 
    <xmpMM:DocumentID>uuid:BA56803C-4BF9-71E8-B864-4EFB26D18E3B</xmpMM:DocumentID> 
-   <xmpMM:InstanceID>uuid:A2942599-2858-8B79-39ED-1CD8C4481272</xmpMM:InstanceID> 
+   <xmpMM:InstanceID>uuid:73A3F573-C1CC-9DC0-1ACA-219E0FB85EC3</xmpMM:InstanceID> 
   </rdf:Description> 
  </rdf:RDF> 
 </x:xmpmeta> 
