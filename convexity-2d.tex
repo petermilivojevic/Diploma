@@ -1,0 +1,107 @@
+\documentclass{beamer}
+
+% It seems that \newif has problems with items in the beamer package
+% To have proofs:
+%\newcommand{\hiddenproof}[2]{#1}
+% To remove proofs
+\newcommand{\hiddenproof}[2]{#2}
+
+
+\newcommand{\out}[1]{}
+
+
+
+
+
+\usetheme{Lecture}
+
+\title[RC -- Konveksnost - 2d]{Konveksna ovojnica v ravnini}
+\subtitle{Lekcija 4}
+\author[Sergio Cabello]{Sergio Cabello \\ \texttt{sergio.cabello@fmf.uni-lj.si}\\ FMF \\ Univerza v Ljubljani}
+\date{}
+\begin{document}
+
+
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Zavijanje darila}
+	
+	\begin{algorithm}{Gift-wrapping}{\qinput{Mno"zica to"ck $P$}\qoutput{Seznam ogli"s"c za $CH(P)$}}
+		Najdemo najni"zjo to"cko $q_0$ od $P$;\\
+		$i \qlet 0$;\\
+		\qrepeat\\
+				$i\qlet i+1$;\\
+				$q_{i}$ je taka to"cka, da je $q_{i-1},q_{i}, q$ zasuk na desno za vsak $q\in P$;
+		\quntil{$q_i=q_0$}\\
+		\qreturn $q_0,q_1,\dots, q_{i-1}$;
+	\end{algorithm}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Zavijanje darila -- Splo"sni polo"zaj}
+	Kje imamo lahko probleme? \\ 
+	Veliko to"ck je lahko kandidatinj ali pa so na premici.\\
+	\bigskip
+	\begin{algorithm}{Gift-wrapping}{}
+		Najdemo \alert{najni"zjo to"cko} $q_0$ od $P$;\\
+		$i \qlet 0$;\\
+		\qrepeat\\
+				$i\qlet i+1$;\\
+				$q_{i}$ je taka to"cka, da je \alert{$q_{i-1},q_{i}, q$} zasuk na desno za vsak $q\in P$;
+		\quntil{$q_i=q_0$}\\
+		\qreturn $q_0,q_1,\dots, q_{i-1}$;
+	\end{algorithm}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Gramahov algoritem - Prva opcija}
+	Izgradimo $M$ in ga spreminjamo. Potrebujemo kazalce.
+	\medskip
+	\begin{algorithm}{Grahamov algoritem}{}
+		Najdemo najni"zjo to"cko $p_0=p_*$;\\
+		$(p_1,\dotsm p_{n-1})\qlet$ uredimo to"cke $P\setminus \{p_*\}$  po kotih od $p_*$;\\
+		Naredimo kro"zni seznam $L=(p_0,p_1,\dots, p_{n-1})$\\
+		$p\qlet p_0$; $q\qlet p_1$; $r\qlet p_2$;\\
+		\qwhile{$q\neq p_0$}\\
+			\qif{$p,q,r$ zasuk na desno}\\
+				$p\qlet q$; $q\qlet r$; $r\qlet r.next$;\\
+			\qelse bri"semo element $q$ od $L$;\\
+				$q\qlet p$; $p\qlet p.prev$;
+			\qfi
+		\qelihw\\
+		\qreturn seznam $L$ minus zadnja $p_0$;
+	\end{algorithm}
+	\smallskip
+	Ali je vrstica 5 problemati"cna, "ce je $p_0,p_1,p_2$ zasuk na levo? 
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Gramahov algoritem - Druga opcija}
+	Ne izgradimo $M$ na za"cetku, temve"c uporabimo za delo sklad $M$. Naredimo ga lahko s tabelo.\\
+	\medskip
+	\begin{algorithm}{Grahamov algoritem}{}
+		Poi"s"cemo najni"zjo to"cko $p_*$;\\
+		$(p_1,\dotsm p_{n-1})\qlet$ urejamo to"cke $P\setminus \{p_*\}$  po kotih od $p_*$;\\
+		$S$ prazen sklad; damo $p_*$ in $p_1$ na sklad;\\
+		$i\qlet 2$,
+		\qwhile{$i<n$}\\
+			$q$\qlet vrh $S$; $p$\qlet element pod vrhom $S$;\\
+			\qif{$p,q,p_i$ zasuk na desno} \\
+				damo $p_i$ na sklad $S$; \\
+				$i\qlet i+1$;\\
+			\qelse odstranimo element $q$ s sklada $S$;
+			\qfi
+		\qelihw\\
+		\qreturn elementi sklada $S$
+	\end{algorithm}
+\end{frame}
+
+
+\end{document}

@@ -29,3 +29,20 @@ remove_all -> add: drevesa
 15 za 6 vozlišč in 14 povezav
 0 za 6 vozlišč in 15 povezav
 24001 za 6 vozlišč
+16807 za 7 vozlišč in 6 povezav
+62565 za 7 vozlišč in 7 povezav
+126906 za 7 vozlišč in 8 povezav
+187011 za 7 vozlišč in 9 povezav
+231233 za 7 vozlišč in 10 povezav
+245093 za 7 vozlišč in 11 povezav
+219692 za 7 vozlišč in 12 povezav
+163127 za 7 vozlišč in 13 povezav
+99190 za 7 vozlišč in 14 povezav
+48619 za 7 vozlišč in 15 povezav
+18907 za 7 vozlišč in 16 povezav
+5684 za 7 vozlišč in 17 povezav
+1273 za 7 vozlišč in 18 povezav
+200 za 7 vozlišč in 19 povezav
+21 za 7 vozlišč in 20 povezav
+0 za 7 vozlišč in 21 povezav
+1426328 za 7 vozlišč

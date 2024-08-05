@@ -1,0 +1,131 @@
+%\ProvidesPackageRCS $Header: /cvsroot/latex-beamer/latex-beamer/themes/theme/beamerthemeBoadilla.sty,v 1.1 2004/10/28 %16:42:54 tantau Exp $
+
+% Copyright 2004 by Manuel Carro <mcarro@fi.upm.es>
+%
+% This program can be redistributed and/or modified under the terms
+% of the GNU Public License, version 2.
+
+% Modified by Sergio Cabello to obtain a bar that increases with the frames
+% and other changes
+% November 2006
+
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage{algo}
+\usepackage[slovene]{babel}
+\usepackage{graphicx,epstopdf,url}
+\usepackage{color,algo}
+
+
+\newcommand{\Plane}{\mathbb{R}^2}
+
+\mode<presentation>
+
+%\ProcessOptionsBeamer
+
+%\usecolortheme{rose}  % This is used for giving colors to the boxes
+\usecolortheme{dolphin}
+
+%FOR THE OUTERTHEME - BASED ON INFOLINES
+\setbeamercolor*{author in head/foot}{parent=palette tertiary}
+\setbeamercolor*{title in head/foot}{parent=palette secondary}
+\setbeamercolor*{date in head/foot}{parent=palette primary}
+
+\setbeamercolor*{section in head/foot}{parent=palette tertiary}
+\setbeamercolor*{subsection in head/foot}{parent=palette primary}
+
+%NO NAVIGATION SYMBOLS
+\setbeamertemplate{navigation symbols}{}
+
+\let\sergioframe=\frame
+\renewcommand{\frame}{\sergioframe \label<1>{frame:\insertframenumber}}
+%
+  
+  
+  
+%% For including many figures.
+%% Usage \manyfigures{parameters for includegraphics, like width, scale...}{file}{number pages}{starting overlay}
+\newcounter{forpages}
+\newcounter{foroverlays}
+
+\def \manyfigures #1#2#3#4{\setcounter{forpages}{0}%
+		\setcounter{foroverlays}{1}%
+		\whiledo{\value{forpages}< #3}{%
+			\addtocounter{forpages}{1}%
+			\includegraphics<\theforoverlays>[page=\theforpages  ,#1]{#2}%
+			\addtocounter{foroverlays}{1}%
+			}}
+
+
+
+
+%%SERGIO's changes
+\newlength{\lengthbarperframe}	%It represents the lengthof the bar if the whole paperwidth is used
+\newcounter{forbar} %Used for counting in which frame we are
+
+\defbeamertemplate*{footline}{infolines theme}
+{%
+  \ifthenelse{\isundefined{\inserttotalframenumber}}% Make sure that \inserttotalframenumber is defined
+	{\newcommand{\inserttotalframenumber}{1}}{}
+	\leavevmode%
+  %
+  \hbox{%
+  \begin{beamercolorbox}[wd=.2\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.2\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \setlength{\lengthbarperframe}{.6\paperwidth/\inserttotalframenumber}%
+  %
+  \setcounter{forbar}{0}%
+  \whiledo{\value{forbar} < \inserttotalframenumber}{%
+		\ifthenelse{\value{forbar} < \insertframenumber}{%
+			\addtocounter{forbar}{1}%
+			\hyperlink{frame:\theforbar}{%
+				\begin{beamercolorbox}[wd=\lengthbarperframe,ht=2.25ex,dp=1ex,left]{author in head/foot}%
+				\end{beamercolorbox}}}{%
+			\addtocounter{forbar}{1}%
+			\hyperlink{frame:\theforbar}{%
+				\begin{beamercolorbox}[wd=\lengthbarperframe,ht=2.25ex,dp=1ex,left]{title in head/foot}%
+				\end{beamercolorbox}}}%
+			}%
+		}%
+  \vskip0pt%
+}
+
+
+\setbeamersize{text margin left=2em,text margin right=2em}
+
+
+\setbeamerfont{frametitle}{series=\bfseries}
+\setbeamertemplate{frametitle}{%
+	\vspace{2.25ex}\par
+	\begin{centering}
+		\insertframetitle\par
+	\end{centering}
+}
+
+\setbeamerfont{itemize/enumerate body}{}
+\setbeamerfont{itemize/enumerate subbody}{size=\normalsize}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\normalsize}
+
+
+
+% Tills' opinion: should be done in an inner theme, not here.
+
+\useitemizeitemtemplate{%
+    \tiny\raise1.5pt\hbox{\color{beamerstructure}$\blacktriangleright$}%
+}
+
+\usesubitemizeitemtemplate{%
+    \tiny\raise1.5pt\hbox{\textcolor{red}{$\bullet$}}%
+}
+\usesubsubitemizeitemtemplate{%
+    \tiny\raise1.5pt\hbox{\color{beamerstructure}$\bigstar$}%
+}
+
+
+
+\mode
+<all>

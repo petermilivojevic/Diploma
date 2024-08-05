@@ -68,7 +68,6 @@
 % \usepackage{...}
 \usepackage{graphicx}
 \usepackage{pgfplots}
-\usepackage{algo}
 \pgfplotsset{compat=1.17}
 
 % deklarirajte vse matematične operatorje, da jih bo LaTeX pravilno stavil
@@ -152,22 +151,22 @@ Pomembno za razumevanje kasnejših delov diplomske naloge je tudi razumevanje ka
 
 !!!!!!!!!
 
+
 \begin{definicija}
-    Strateška igra (s čistimi strategijami) s funkcijo preferenc je trojica $(N, (A_i)_{i\in N} , (u_i)_{i\in N})$ pri čemer:
+    Strateška igra s funkcijo preferenc je trojica $(N, (A_i)_{i\in N} , (u_i)_{i\in N})$ pri čemer:
 \begin{itemize}
     \item $N$ je množica igralcev, v našem primeru je to število točk v grafu
-    \item Za vsakega igralca $i \in N$ je $A_i$ neprazna množica njegovih akcij, med katerimi izbira igralec $i$
-    \item Za vsakega igralca $i \in N$ je $u_i$ funkcija preferenc na $A = A_1 \times \ldots \times A_n$. Vsak igralec ima tako svojo preferenčno funkcijo $u_i(a_1, \ldots, a_n)$, ki slika v linearno urejeno množic in kjer je $a_i \in A_i$.
+    \item Za vsakega igralca $i \in N$ je $A_i$ neprazna množica njegovih akcij, med katerimi v danem trenutku izbera igralec $i$
+    \item Za vsakega igralca $i \in N$ je $u_i$ funkcija preferenc na $A_i$. Torej $u_i : A_i \to \mathbb{R}$ v splošnem in $u_i : A_i \to \mathbb{N}$ v našem primeru.
 \end{itemize}
 \end{definicija}
+Za funkcijo preferenc lahko zapišemo sledeče relacije.
 
-Za funkcijo preferenc lahko zapišemo sledeče relacije
-
-$\forall a,b \in A:$
+$\forall a,b \in A_i:$
 \begin{itemize}
-    \item $u(a) \geq u(b) \Rightarrow$ $a$ je vsaj tako dobro kot $b$
-    \item $u(a) > u(b) \Rightarrow$ $a$ je boljše kot $b$
-    \item $u(a) = u(b) \Rightarrow$ indiferenten med $a$ in $b$
+    \item $(u(a) \geq u(b) \Rightarrow a)$ je vsaj tako dobro kot $b$
+    \item $(u(a) > u(b) \Rightarrow a)$ je boljše kot $b$
+    \item $(u(a) = u(b) \Rightarrow b)$ indiferenten med $a$ in $b$
 \end{itemize}
 
 
@@ -230,20 +229,17 @@ omrežja drevo, potem ima premer največ $2$ in je kot tak zvezda.
 
 \begin{dokaz}
 Dokaza se bomo lotili z protislovjem. Predpostavimo, da je ravnovesni graf
-drevo s premerom $3$ ali več. Ker ima premer vsaj $3$ obstajata vozlišči
-$u$ in $v$ oddaljeni eno od druge za točno $3$ preko najkrajše in edine poti,
+drevo s premerom 3 ali več. Ker ima premer vsaj 3 obstajata vozlišči
+$u$ in $v$ oddaljeni eno od druge za točno 3 preko najkrajše in edine poti,
 ki gre skozi dve točki, ki jih označimo z $a$ in $b$. Tako imamo pot
 $v \to a \to b \to u$. Z $s_v,\ s_a,\ s_b,\ s_u$ označimo število morebitnih
-točk poddreves upetih na $v, a, b, u$. Obravnavamo $2$ možni zamenjavi: 
+točk poddreves upetih na $v, a, b, u$. Obravnavamo 2 možni zamenjavi: 
 \end{dokaz}
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.3\textwidth]{drevo_1.png}
-    \includegraphics[width=0.3\textwidth]{drevo_2.png}
-    \includegraphics[width=0.3\textwidth]{drevo_3.png}
-    \caption{Ilustracije dreves}
-\end{figure}
+\includegraphics[width=0.3\textwidth]{drevo_1.png}
+\includegraphics[width=0.3\textwidth]{drevo_2.png}
+\includegraphics[width=0.3\textwidth]{drevo_3.png}
+
 
 \begin{lema}
 V vsakem ravnovesnem grafu igre maksimalne razdalje se lokalni premer za
@@ -427,14 +423,7 @@ zamenjamo s povezavo $28$ ima vozlišče $2$ vsoto razdalj enako
 $1 + 1 + 2 + 2 + 2 + 3 + 3 = 13$.
 \end{dokaz}
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.9\textwidth]{vsota_premer_3.png}
-    \caption{Graf s premerom 3}
-\end{figure}
-
-V spodnjem delu bomo navedli nekaj izrekov brez dokazov,
-ki nam pomagajo razumeti obnašanje oziroma omejitve ravnovesnih grafov.
+\includegraphics[width=0.9\textwidth]{vsota_premer_3.png}
 
 \begin{izrek}
 Vsak ravnovesni graf za skupno vsoto razdalj ima premer $2^{O(\sqrt{\lg n})}$.
@@ -454,12 +443,8 @@ $uv$ zmanjša vsoto razdalj od $u$ za največ $5n \log n$.
 \begin{izrek}
 Obstaja ravnovesni graf za maksimalno razdaljo z premerom $\Theta(\sqrt{n})$.
 \end{izrek}
+\includegraphics[width=0.9\textwidth]{Plagiat.png}
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.9\textwidth]{Plagiat.png}
-    \caption{Ravnovesni graf za maksimalno razdaljo}
-\end{figure}
 
 \begin{izrek}
 Vsak ravnovesni graf za skupno vsoto razdaljo $G$ z $n \geq 24$ vozlišč in
@@ -491,21 +476,12 @@ in najmanj kritičnih in stabilnih hkrati. Opazili smo tudi, da pri določenih k
 ravnovesni grafi glede na razdaljo ne obstajajo.
 
 
-
-
-
-Na manjših grafih smo preverjali tudi kakšna je cena stabilnosti za igro maksimalne razdalje.
-
-V nadaljevanju smo si ogledali tudi nekaj različnih algoritmov za iskanje ravnovesnega grafa glede na največjo razdaljo in
+V nadaljevanju smo si ogledali nekaj različnih algoritmov za iskanje ravnovesnega grafa glede na največjo razdaljo in
 koliko od najdenih ravnovesnih grafov pri posameznem algoritmu je dreves.
 
 
-Nazadnje smo si tudi pogledali katera točka v drevesnih grafih pri igri doseže najboljšo pozicijo tako v igri
+Pogledali smo si tudi katera točka v drevesnih grafih pri igri doseže najboljšo pozicijo tako v igri
 kjer imajo vse povezave enako ceno in igri v realni ravnini.
-
-% \begin{tabular}[pos]{table spec}
-% \begin{table}[h]
-% float
 
 
 \scriptsize
@@ -606,251 +582,305 @@ Zanimal nas je tudi socialni optimum za max verzijo in ali je hkrati tudi ravnov
 
 Socialni optimum max \\
 
-\begin{table}[!ht]
+\begin{table}[h]
     \centering
-    \begin{tabular}{|l|l|l|l|l|l|l|l|}
-    \hline
-        Vozlišča & Povezave & Socialni optimum max \\ \hline
-        2 & 1 & 2  & je \\ \hline
-        3 & 2 & 5  & je \\ \hline
-        3 & 3 & 3  & je \\ \hline
-        4 & 3 & 7  & je \\ \hline
-        4 & 4 & 7  & ni \\ \hline
-        4 & 5 & 6  & ni \\ \hline
-        4 & 6 & 4  & je \\ \hline
-        5 & 4 & 9  & je \\ \hline
-        5 & 5 & 9  & ni \\ \hline
-        5 & 6 & 9  & ni \\ \hline
-        5 & 7 & 8  & ni \\ \hline
-        5 & 8 & 8  & ni \\ \hline
-        5 & 9 & 7  & ni \\ \hline
-        5 & 10 & 5  & je \\ \hline
-        6 & 5 & 11  & je \\ \hline
-        6 & 6 & 11  & ni \\ \hline
-        6 & 7 & 11  & ni \\ \hline
-        6 & 8 & 11  & ni \\ \hline
-        6 & 9 & 10  & ni \\ \hline
-        6 & 10 & 10 & ni \\ \hline
-        6 & 11 & 10 & ni \\ \hline
-        6 & 12 & 9  & ni \\ \hline
-        6 & 13 & 9  & ni \\ \hline
-        6 & 14 & 8  & ni \\ \hline
-        6 & 15 & 6  & je \\ \hline
-        7 & 6 & 13  & je \\ \hline
-        7 & 7 & 13  & ni \\ \hline
-        7 & 8 & 13  & ni \\ \hline
-        7 & 9 & 13  & ni \\ \hline
-        7 & 10 & 13 & ni \\ \hline
-        7 & 11 & 12 & ni \\ \hline
-        7 & 12 & 12 & ni \\ \hline
-        7 & 13 & 12 & ni \\ \hline
-        7 & 14 & 12 & ni \\ \hline
-        7 & 15 & 11 & ni \\ \hline
-        7 & 16 & 11 & ni \\ \hline
-        7 & 17 & 11 & ni \\ \hline
-        7 & 18 & 10 & ni \\ \hline
-        7 & 19 & 10 & ni \\ \hline
-        7 & 20 & 9  & ni \\ \hline
-        7 & 21 & 7  & je \\ \hline
-    \end{tabular}
-\end{table}
+    \resizebox{\linewidth}{!}{%
+        \begin{tabular}{|c|*{16}{c|}}
+        \hline
+        \multirow{\textbf{n$\backslash$e}} & \multicolumn{16}{c|}{\textbf{Število povezav}} \\ \cline{2-17}
+        & \textbf{n - 1} & \textbf{n} & \textbf{n + 1} & \textbf{n + 2} & \textbf{n + 3} & \textbf{n + 4} & \textbf{n + 5} 
+        & \textbf{n + 6} & \textbf{n + 7} & \textbf{n + 8} & \textbf{n + 9} & \textbf{n + 10} & \textbf{n + 11} & \textbf{n + 12} 
+        & \textbf{n + 13} & \textbf{n + 14}\\
+        \hline
+            2 & (2, 'Je')  &            &            &            &            &            &            &            &            &            &            &            &            &            &           &           \\
+            3 & (5, 'Je')  & (3, 'Je')  &            &            &            &            &            &            &            &            &            &            &            &            &           &           \\
+            4 & (7, 'Je')  & (7, 'Ni')  & (6, 'Ni')  & (4, 'Je')  &            &            &            &            &            &            &            &            &            &            &           &           \\
+            5 & (9, 'Je')  & (9, 'Ni')  & (9, 'Ni')  & (8, 'Ni')  & (8, 'Ni')  & (7, 'Ni')  & (5, 'Je')  &            &            &            &            &            &            &            &           &           \\
+            6 & (11, 'Je') & (11, 'Ni') & (11, 'Ni') & (11, 'Ni') & (10, 'Ni') & (10, 'Ni') & (10, 'Ni') & (9, 'Ni')  & (9, 'Ni')  & (8, 'Ni')  & (6, 'Je')  &            &            &            &           &           \\
+            7 & (13, 'Je') & (13, 'Ni') & (13, 'Ni') & (13, 'Ni') & (13, 'Ni') & (12, 'Ni') & (12, 'Ni') & (12, 'Ni') & (12, 'Ni') & (11, 'Ni') & (11, 'Ni') & (11, 'Ni') & (10, 'Ni') & (10, 'Ni') & (9, 'Ni') & (7, 'Je') \\
+        \hline
+        \end{tabular}
+    }
+    \caption{Your table caption goes here.}
+    \label{tab:tabela2}
+\end{table}\\
 
 
-
-Rezultati so pokazali, da so samo polni in drevesa lahko hkrati ravnovesni in socialni optimum.
-
-
-
-
-
-
-
-
-Premer grafa, ki doseže socialni optimum je največ 2. Vozlišča s premerom 2 bi si želela odstraniti nekatere povezave.
+Premer grafa je največ 2. Vozlišča s premerom 2 bi si želela odstraniti nekatere povezave.
 Cena stabilnosti je lahko večja od 1 ampak manjša od 2. Ko gre n proti neskončno konvergira proti 2 ali 1.
 !!!!!! Optimalni grafi se stabilizirajo kot zvezde za max.
 
 
 Socialni optimum sum, (opti, premer)\\
+\begin{table}[h]
+    \centering
+    \resizebox{\linewidth}{!}{%
+        \begin{tabular}{|c|*{16}{c|}}
+        \hline
+        \multirow{\textbf{n$\backslash$e}} & \multicolumn{16}{c|}{\textbf{Število povezav}} \\ \cline{2-17}
+        & \textbf{n - 1} & \textbf{n} & \textbf{n + 1} & \textbf{n + 2} & \textbf{n + 3} & \textbf{n + 4} & \textbf{n + 5} 
+        & \textbf{n + 6} & \textbf{n + 7} & \textbf{n + 8} & \textbf{n + 9} & \textbf{n + 10} & \textbf{n + 11} & \textbf{n + 12} 
+        & \textbf{n + 13} & \textbf{n + 14}\\
+        \hline
+            2 & (2, 1)   &         &         &         &         &         &         &         &         &         &         &          &          &          &          &          \\
+            3 & (8, 2)   & (6, 1)  &         &         &         &         &         &         &         &         &         &          &          &          &          &          \\
+            4 & (18, 2)  & (16, 2) & (14, 2) & (12, 1) &         &         &         &         &         &         &         &          &          &          &          &          \\
+            5 & (32, 2)  & (30, 2) & (28, 2) & (26, 2) & (24, 2) & (22, 2) & (20, 1) &         &         &         &         &          &          &          &          &          \\
+            6 & (50, 2)  & (48, 2) & (46, 2) & (44, 2) & (42, 2) & (40, 2) & (38, 2) & (36, 2) & (34, 2) & (32, 2) & (30, 1) &          &          &          &          &          \\
+            7 & (72, 2)  & (70, 2) & (68, 2) & (66, 2) & (64, 2) & (62, 2) & (60, 2) & (58, 2) & (56, 2) & (54, 2) & (52, 2) & (50, 2)  & (48, 2)  & (46, 2)  & (44, 2)  & (42, 1)  \\
+        \hline
+        \end{tabular}
+    }
+\caption{Your table caption goes here.}
+\label{tab:tabela3}
+\end{table}
 
 
-
-
-
-
-Sprva smo primerjali $4$ različnie algoritme za iskanje ravnovesja pri igri maksimalne razdalje
+Primerjali smo nekaj različnih algoritmov za iskanje ravnovesja oziroma igranje igre
 in opazovali kateri algoritem ima večjo tenzijo ustvarit drevesa za ravnovesne grafe.
-Testiranje smo opravili na vseh grafih povezanih označenih grafih od $2$ do $7$ vozlišč.
 
 
-Vsi štirje algoritmi so delovali s trojno for zanko.
-Za dani graf je trojna zanka prvotno šla po vseh vozliščih grafa,
-nato po vseh povezavah vozlišča določenega s predhodno for zanko
-in nazadnje preko vseh ostalih (ne izbranih s prvotno for zanko) vozlišč.
-\begin{algorithm}{Trojna zanka}{graf}
-    \qinput{Graf $graf$}
-    \qoutput{Ravnovesni graf} % za razmislit
-    \qfor{vsak vozel $v1$ v graf.nodes}\\
-        \qfor{vsako povezavo $p$ v list(graf.edges($v1$))}\\
-            \qfor{vsak vozel $v2$ v graf.nodes - \{v1\}}\\
+V tem besedilu bomo opisali štiri algoritme za optimizacijo grafov v latex kodi.
 
-\end{algorithm}
+\section{Algoritem: ekzaktno\_max\_1(graf)}
 
-Prvi algoritem smo poimenovali $odstrani_in_doda$ skrajšano kot $o_d$
-
-\begin{algorithm}{odstrani_in_doda}{graf}
-    \qinput{Graf $graf$}
-    \qoutput{Ravnovesni graf} % za razmislit
-    \qfor{vsak vozel $v1$ v graf.nodes}\\
-        \qfor{vsako povezavo $p$ v list(graf.edges($v1$))}\\
-            \qfor{vsak vozel $v2$ v graf.nodes - \{v1\}}\\
-                odstrani povezavo $p$ in preveri ali se to vozlišču $v1$ izplača, če se ohrani spremembo in začne z zanko na novo za nov modificiran graf.
-                če se odstranitev ne izplača poskuša povezavo $p$ zamenjati z povezavo med $v1$ in $v2$. Ponovno preveri ali se zamenjava izplača in v kolikor se začne zanko na novo z novim modificiranim grafom.
-
-    Če se celotna trojna for zanka izvrši brez spremembe grafa nam algoritem vrne nastal ravnovesni graf.
-
-\end{algorithm}
+Algoritem $1$ išče optimalen graf tako, da za vozlišča po vrsti preveja eno po eno
+povezavo na način, da jo prvo poskuša odstraniti in ugotoviti ali je graf še vedno
+povezan in ali je vozlišče ki smo mu odstranili povezavo ohranilo lokalni premer.
+V kolikor odstranitev te povezave ni v interesu vozlišča poskuša odstranjeno povezavo
+zamenjati za še ne obstoječe povezave in preveri ali je graf povezan in se je lokalni
+premer vozlišča zmanjšal. Algoritem se ob vsaki spremembi grafa vrne na začetek in
+ponovno poizkuša odstraniti in zamenjati povezave od prvega vozlišča naprej.
+Algoriem vrne optimiziran graf, ko gre čez vsa vozlišča in njihove povezave brez,
+da bi se graf spremenil. Torej, ko nobeno vozlišče ne more več izboljšati svojega položaja.
 
 
-Drugi algoritem smo poimenovali $zamenja_in_odstrani$ skrajšano kot $z_o$
+\section*{Opis algoritmov}
 
-\begin{algorithm}{zamenja_in_odstrani}{graf}
-    \qinput{Graf $graf$}
-    \qoutput{Ravnovesni graf} % za razmislit
-    \qfor{vsak vozel $v1$ v graf.nodes}\\
-        \qfor{vsako povezavo $p$ v list(graf.edges($v1$))}\\
-            \qfor{vsak vozel $v2$ v graf.nodes - \{v1\}}\\
-                poskuša povezavo $p$ zamenjati z povezavo med $v1$ in $v2$. Preveri ali se zamenjava izplača in v kolikor se začne zanko na novo z novim modificiranim grafom.
-                če se zamenjava ne izplača odstrani povezavo $p$ in preveri ali se to vozlišču $v1$ izplača, če se ohrani spremembo in začne z zanko na novo za nov modificiran graf.
-    Če se celotna trojna for zanka izvrši brez spremembe grafa nam algoritem vrne nastal ravnovesni graf.
+\subsection*{Algoritem 1}
 
-\end{algorithm}
+Algoritem $1$ išče optimalen graf tako, da za vsako vozlišče iterativno pregleduje povezave. Postopek je naslednji:
 
-
-
-
-Tretji algoritem smo poimenovali $zamenja_vse_in_odstrani$ skrajšano kot $z_v_o$
-
-\begin{algorithm}{zamenja_vse_in_odstrani}{graf}
-    \qinput{Graf $graf$}
-    \qoutput{Ravnovesni graf} % za razmislit
-    \qfor{vsak vozel $v1$ v graf.nodes}\\
-        \qfor{vsako povezavo $p$ v list(graf.edges($v1$))}\\
-            \qfor{vsak vozel $v2$ v graf.nodes - \{v1\}}\\
-                poskuša povezavo $p$ zamenjati z povezavo med $v1$ in $v2$. Preveri ali se zamenjava izplača in v kolikor se začne zanko na novo z novim modificiranim grafom.
-    Če se celotna trojna for zanka izvrši brez spremembe grafa poskuša algoritem z dvojno zanko odstranjevat povezave.
+\begin{enumerate}
+    \item \textbf{Odstranjevanje povezave}:
+    \begin{itemize}
+        \item Za vsako vozlišče v grafu preveri vsako povezavo, ki izhaja iz tega vozlišča.
+        \item Poskuša odstraniti to povezavo in preveri, ali graf ostane povezan in ali lokalni premer (ekscentričnost) vozlišča ostane enak ali se zmanjša.
+    \end{itemize}
     
-    \qfor{vsak vozel $v1$ v graf.nodes}\\
-        \qfor{vsako povezavo $p$ v list(graf.edges($v1$))}\\
-            odstrani povezavo $p$ in preveri ali se to vozlišču $v1$ izplača, če se ohrani spremembo in začne z trojno for zanko na novo za nov modificiran graf.
-
-    Če se celotna trojna in dvojna for zanka izvrši brez spremembe grafa nam algoritem vrne nastal ravnovesni graf.
-
-\end{algorithm}
-
-
-Četrti algoritem smo poimenovali $odstrani_vse_in_zamenja$ skrajšano kot $o_v_z$
-
-\begin{algorithm}{odstrani_vse_in_zamenja}{graf}
-    \qinput{Graf $graf$}
-    \qoutput{Ravnovesni graf} % za razmislit
-    \qfor{vsak vozel $v1$ v graf.nodes}\\
-        \qfor{vsako povezavo $p$ v list(graf.edges($v1$))}\\
-            odstrani povezavo $p$ in preveri ali se to vozlišču $v1$ izplača, če se ohrani spremembo in začne z zanko na novo za nov modificiran graf.
-    Če se celotna dvojna for zanka izvrši brez spremembe grafa poskuša algoritem z trojno zanko zamenjati povezave.
-
-    \qfor{vsak vozel $v1$ v graf.nodes}\\
-        \qfor{vsako povezavo $p$ v list(graf.edges($v1$))}\\
-            \qfor{vsak vozel $v2$ v graf.nodes - \{v1\}}\\
-                poskuša povezavo $p$ zamenjati z povezavo med $v1$ in $v2$. Preveri ali se zamenjava izplača in v kolikor se začne zanko na novo z novim modificiranim grafom.
+    \item \textbf{Zamenjava povezave}:
+    \begin{itemize}
+        \item Če odstranitev povezave ni koristna (graf postane nepovezan ali se ekscentričnost poveča), algoritem poskuša odstraniti to povezavo in dodati novo, še ne obstoječo povezavo z drugim vozliščem.
+        \item Preveri, ali graf ostane povezan in ali se ekscentričnost vozlišča zmanjša.
+    \end{itemize}
     
-    Če se celotna dvojna in trojna for zanka izvrši brez spremembe grafa nam algoritem vrne nastal ravnovesni graf.
+    \item \textbf{Rekurzivnost}:
+    \begin{itemize}
+        \item Če najde izboljšavo (graf ostane povezan in se ekscentričnost zmanjša), posodobi graf in se rekurzivno vrne na začetek ter ponovno preverja povezave od prvega vozlišča naprej.
+    \end{itemize}
+    
+    \item \textbf{Stabilno stanje}:
+    \begin{itemize}
+        \item Algoritem vrne optimiziran graf, ko gre čez vsa vozlišča in njihove povezave brez, da bi se graf spremenil. To pomeni, da nobeno vozlišče ne more več izboljšati svojega položaja.
+    \end{itemize}
+\end{enumerate}
 
-\end{algorithm}
+\subsection*{Algoritem 2}
+
+Algoritem $2$ je podoben algoritmu $1$, vendar ima nekaj razlik v pristopu. Postopek je naslednji:
+
+\begin{enumerate}
+    \item \textbf{Odstranjevanje in dodajanje povezave}:
+    \begin{itemize}
+        \item Za vsako vozlišče v grafu preveri vsako povezavo, ki izhaja iz tega vozlišča.
+        \item Poskuša odstraniti to povezavo in dodati novo povezavo z drugim vozliščem ter preveri, ali graf ostane povezan in ali se lokalni premer (ekscentričnost) vozlišča zmanjša.
+    \end{itemize}
+    
+    \item \textbf{Rekurzivnost}:
+    \begin{itemize}
+        \item Če najde izboljšavo (graf ostane povezan in se ekscentričnost zmanjša), posodobi graf in se rekurzivno vrne na začetek ter ponovno preverja povezave od prvega vozlišča naprej.
+    \end{itemize}
+    
+    \item \textbf{Stabilno stanje}:
+    \begin{itemize}
+        \item Algoritem vrne optimiziran graf, ko gre čez vsa vozlišča in njihove povezave brez, da bi se graf spremenil. To pomeni, da nobeno vozlišče ne more več izboljšati svojega položaja.
+    \end{itemize}
+\end{enumerate}
+
+\subsection*{Algoritem 3}
+
+Algoritem $3$ prav tako išče optimalen graf s preverjanjem in spreminjanjem povezav, vendar s poudarkom na drugačnem zaporedju operacij. Postopek je naslednji:
+
+\begin{enumerate}
+    \item \textbf{Odstranjevanje in dodajanje povezave}:
+    \begin{itemize}
+        \item Za vsako vozlišče v grafu preveri vsako povezavo, ki izhaja iz tega vozlišča.
+        \item Poskuša odstraniti to povezavo in dodati novo povezavo z drugim vozliščem ter preveri, ali graf ostane povezan in ali se lokalni premer (ekscentričnost) vozlišča zmanjša.
+    \end{itemize}
+    
+    \item \textbf{Dodatno preverjanje}:
+    \begin{itemize}
+        \item Če nobena povezava ne izboljša stanja, ponovno preveri vse povezave in odstrani tiste, ki ne povečajo ekscentričnosti, če je graf še vedno povezan.
+    \end{itemize}
+    
+    \item \textbf{Rekurzivnost}:
+    \begin{itemize}
+        \item Če najde izboljšavo, posodobi graf in se rekurzivno vrne na začetek ter ponovno preverja povezave od prvega vozlišča naprej.
+    \end{itemize}
+    
+    \item \textbf{Stabilno stanje}:
+    \begin{itemize}
+        \item Algoritem vrne optimiziran graf, ko gre čez vsa vozlišča in njihove povezave brez, da bi se graf spremenil.
+    \end{itemize}
+\end{enumerate}
+
+\subsection*{Algoritem 4}
+
+Algoritem $4$ združuje tehnike iz prejšnjih algoritmov, a z dodatnimi preverjanji in koraki. Postopek je naslednji:
+
+\begin{enumerate}
+    \item \textbf{Odstranjevanje in zamenjava povezave}:
+    \begin{itemize}
+        \item Za vsako vozlišče v grafu preveri vsako povezavo, ki izhaja iz tega vozlišča.
+        \item Poskuša odstraniti to povezavo in jo nadomestiti z novo povezavo z drugim vozliščem ter preveri, ali graf ostane povezan in ali se ekscentričnost zmanjša.
+    \end{itemize}
+    
+    \item \textbf{Dodatno preverjanje}:
+    \begin{itemize}
+        \item Če nobena povezava ne izboljša stanja, ponovno preveri vse povezave in odstrani tiste, ki ne povečajo ekscentričnosti, če je graf še vedno povezan.
+    \end{itemize}
+    
+    \item \textbf{Rekurzivnost}:
+    \begin{itemize}
+        \item Če najde izboljšavo, posodobi graf in se rekurzivno vrne na začetek ter ponovno preverja povezave od prvega vozlišča naprej.
+    \end{itemize}
+    
+    \item \textbf{Stabilno stanje}:
+    \begin{itemize}
+        \item Algoritem vrne optimiziran graf, ko gre čez vsa vozlišča in njihove povezave brez, da bi se graf spremenil.
+    \end{itemize}
+\end{enumerate}
 
 
 
 
 
 
-Tukaj so rezultati(število dreves izmed vseh ravnovesnih grafov) algoritmov ločeni glede na vozlišča in povezave.
+
+
+Algoritem \texttt{ekzaktno\_max\_1(graf)} optimizira graf tako, da išče ravnovesni graf z zmanjšanjem ekscentričnosti. 
+Funkcija iterativno preverja vsako povezavo v grafu, odstrani povezavo, če odstranjena povezava ne vpliva na povezanost
+grafa in zmanjša ekscentričnost, ali doda novo povezavo, če zmanjša ekscentričnost grafa.
+Če nobena od pogojev ni izpolnjena, vrne izvirni graf kot ravnovesni graf.
+
+
+
+
+
+\section{Algoritem: ekzaktno\_max\_2(graf)}
+
+Algoritem \texttt{ekzaktno\_max\_2(graf)} optimizira graf s povečanjem povezav in zmanjšanjem ekscentričnosti.
+Funkcija iterativno preverja vsako povezavo v grafu, odstrani povezavo in doda novo, če nova povezava ne vpliva
+na povezanost grafa in zmanjša ekscentričnost. Prav tako odstrani povezavo, če ne vpliva na povezanost in zmanjša
+ali ohranja ekscentričnost grafa. Če nobena od pogojev ni izpolnjena, vrne izvirni graf kot ravnovesni graf.
+
+\section{Algoritem: ekzaktno\_max\_3(graf)}
+
+Algoritem \texttt{ekzaktno\_max\_3(graf)} optimizira graf s povečanjem povezav in zmanjšanjem ekscentričnosti.
+Funkcija iterativno preverja vsako povezavo v grafu, odstrani povezavo in doda novo, če nova povezava ne vpliva
+na povezanost grafa in zmanjša ekscentričnost. Nato ponovno preveri vse povezave in odstrani povezavo,
+če ne vpliva na povezanost in zmanjša ali ohranja ekscentričnost grafa. Če nobena od pogojev ni izpolnjena,
+vrne izvirni graf kot ravnovesni graf.
+
+\section{Algoritem: ekzaktno\_max\_4(graf)}
+
+Algoritem \texttt{ekzaktno\_max\_4(graf)} optimizira graf z zmanjšanjem ekscentričnosti s pomočjo dveh faz.
+V prvi fazi funkcija iterativno odstranjuje povezave in preverja povezanost grafa ter ekscentričnost.
+Če je ekscentričnost manjša ali enaka, graf shrani kot ravnovesni graf in ponovno zažene optimizacijo.
+V drugi fazi algoritem odstranjuje povezave in dodaja nove, če nova povezava zmanjša ekscentričnost in ohranja povezanost.
+Če nobena od pogojev ni izpolnjena, vrne izvirni graf kot ravnovesni graf.
+
+
+
 
 \begin{table}[!ht]
     \centering
-    \begin{tabular}{|l|l|l|l|l|l|l|l|}
+    \begin{tabular}{|l|l|l|l|l|l|}
     \hline
-        Vozlišča & Povezave & vsi grafi & s\_r & s1\_r & r\_a & sa\_r & ra\_a \\ \hline
-        2 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\ \hline
-        3 & 2 & 3 & 3 & 3 & 3 & 3 & 3 \\ \hline
-        3 & 3 & 1 & 0 & 0 & 0 & 0 & 0 \\ \hline
-        4 & 3 & 16 & 16 & 16 & 16 & 16 & 16 \\ \hline
-        4 & 4 & 15 & 12 & 12 & 12 & 12 & 12 \\ \hline
-        4 & 5 & 6 & 6 & 6 & 6 & 6 & 6 \\ \hline
-        4 & 6 & 1 & 0 & 0 & 0 & 0 & 0 \\ \hline
-        5 & 4 & 125 & 125 & 125 & 125 & 125 & 125 \\ \hline
-        5 & 5 & 222 & 204 & 204 & 204 & 201 & 210 \\ \hline
-        5 & 6 & 205 & 175 & 175 & 175 & 175 & 175 \\ \hline
-        5 & 7 & 120 & 109 & 109 & 109 & 109 & 109 \\ \hline
-        5 & 8 & 45 & 42 & 42 & 42 & 42 & 42 \\ \hline
-        5 & 9 & 10 & 10 & 10 & 10 & 10 & 10 \\ \hline
-        5 & 10 & 1 & 0 & 0 & 0 & 0 & 0 \\ \hline
-        6 & 5 & 1296 & 1296 & 1296 & 1296 & 1296 & 1296 \\ \hline
-        6 & 6 & 3660 & 3470 & 3488 & 3500 & 3470 & 3540 \\ \hline
-        6 & 7 & 5700 & 4856 & 4948 & 5023 & 4844 & 5160 \\ \hline
-        6 & 8 & 6165 & 5067 & 5166 & 5284 & 4842 & 5278 \\ \hline
-        6 & 9 & 4945 & 4092 & 4136 & 4209 & 4037 & 4251 \\ \hline
-        6 & 10 & 2997 & 2610 & 2621 & 2647 & 2585 & 2666 \\ \hline
-        6 & 11 & 1365 & 1246 & 1249 & 1255 & 1240 & 1265 \\ \hline
-        6 & 12 & 455 & 429 & 429 & 429 & 429 & 431 \\ \hline
-        6 & 13 & 105 & 99 & 99 & 99 & 99 & 99 \\ \hline
-        6 & 14 & 15 & 15 & 15 & 15 & 15 & 15 \\ \hline
-        6 & 15 & 1 & 0 & 0 & 0 & 0 & 0 \\ \hline
-        7 & 6 & 16807 & 16807 & 16807 & 16807 & 16807 & 16807 \\ \hline
-        7 & 7 & 68295 & 51263 & 56683 & 57681 & 47098 & 62565 \\ \hline
-        7 & 8 & 156555 & 109849 & 119891 & 122033 & 125319 & 126906 \\ \hline
-        7 & 9 & 258125 & 179044 & 190438 & 193894 & 207053 & 187011 \\ \hline
-        7 & 10 & 331506 & 234218 & 245268 & 250974 & 255672 & 231233 \\ \hline
-        7 & 11 & 343140 & 252391 & 261988 & 268460 & 261386 & 245093 \\ \hline
-        7 & 12 & 290745 & 223004 & 230004 & 235253 & 228026 & 219692 \\ \hline
-        7 & 13 & 202755 & 162828 & 166522 & 169358 & 164950 & 163127 \\ \hline
-        7 & 14 & 116175 & 97761 & 99175 & 100329 & 98291 & 99190 \\ \hline
-        7 & 15 & 54257 & 47674 & 48056 & 48424 & 47701 & 48619 \\ \hline
-        7 & 16 & 20349 & 18569 & 18631 & 18708 & 18550 & 18907 \\ \hline
-        7 & 17 & 5985 & 5615 & 5619 & 5627 & 5612 & 5684 \\ \hline
-        7 & 18 & 1330 & 1267 & 1267 & 1267 & 1267 & 1273 \\ \hline
-        7 & 19 & 210 & 200 & 200 & 200 & 200 & 200 \\ \hline
-        7 & 20 & 21 & 21 & 21 & 21 & 21 & 21 \\ \hline
-        7 & 21 & 1 & 0 & 0 & 0 & 0 & 0 \\ \hline
+        s\_r & r\_a & sa\_r & ra\_a & Vozlišča & Povezave \\ \hline
+        1 & 1 & 1 & 1 & 2 & 1 \\ \hline
+        3 & 3 & 3 & 3 & 3 & 2 \\ \hline
+        0 & 0 & 0 & 0 & 3 & 3 \\ \hline
+        16 & 16 & 16 & 16 & 4 & 3 \\ \hline
+        12 & 12 & 12 & 12 & 4 & 4 \\ \hline
+        6 & 6 & 6 & 6 & 4 & 5 \\ \hline
+        0 & 0 & 0 & 0 & 4 & 6 \\ \hline
+        125 & 125 & 125 & 125 & 5 & 4 \\ \hline
+        204 & 204 & 201 & 210 & 5 & 5 \\ \hline
+        175 & 175 & 175 & 175 & 5 & 6 \\ \hline
+        109 & 109 & 109 & 109 & 5 & 7 \\ \hline
+        42 & 42 & 42 & 42 & 5 & 8 \\ \hline
+        10 & 10 & 10 & 10 & 5 & 9 \\ \hline
+        0 & 0 & 0 & 0 & 5 & 10 \\ \hline
+        1296 & 1296 & 1296 & 1296 & 6 & 5 \\ \hline
+        3488 & 3500 & 3470 & 3540 & 6 & 6 \\ \hline
+        4948 & 5023 & 4844 & 5160 & 6 & 7 \\ \hline
+        5166 & 5284 & 4842 & 5278 & 6 & 8 \\ \hline
+        4136 & 4209 & 4037 & 4251 & 6 & 9 \\ \hline
+        2621 & 2647 & 2585 & 2666 & 6 & 10 \\ \hline
+        1249 & 1255 & 1240 & 1265 & 6 & 11 \\ \hline
+        429 & 429 & 429 & 431 & 6 & 12 \\ \hline
+        99 & 99 & 99 & 99 & 6 & 13 \\ \hline
+        15 & 15 & 15 & 15 & 6 & 14 \\ \hline
+        0 & 0 & 0 & 0 & 6 & 15 \\ \hline
+        16807 & 16807 & 16807 & 16807 & 7 & 6 \\ \hline
+        56683 & 57681 & 47098 & 62565 & 7 & 7 \\ \hline
+        119891 & 122033 & 125319 & 126906 & 7 & 8 \\ \hline
+        190438 & 193894 & 207053 & 187011 & 7 & 9 \\ \hline
+        245268 & 250974 & 255672 & 231233 & 7 & 10 \\ \hline
+        261988 & 268460 & 261386 & 245093 & 7 & 11 \\ \hline
+        230004 & 235253 & 228026 & 219692 & 7 & 12 \\ \hline
+        166522 & 169358 & 164950 & 163127 & 7 & 13 \\ \hline
+        99175 & 100329 & 98291 & 99190 & 7 & 14 \\ \hline
+        48056 & 48424 & 47701 & 48619 & 7 & 15 \\ \hline
+        18631 & 18708 & 18550 & 18907 & 7 & 16 \\ \hline
+        5619 & 5627 & 5612 & 5684 & 7 & 17 \\ \hline
+        1267 & 1267 & 1267 & 1273 & 7 & 18 \\ \hline
+        200 & 200 & 200 & 200 & 7 & 19 \\ \hline
+        21 & 21 & 21 & 21 & 7 & 20 \\ \hline
+        0 & 0 & 0 & 0 & 7 & 21 \\ \hline
     \end{tabular}
 \end{table}
 
 
-Tukaj so strnjeni rezultati po vozliščih.
 
 \begin{table}[!ht]
     \centering
-    \begin{tabular}{|l|l|l|l|l|l|l|l|}
+    \begin{tabular}{|l|l|l|l|l|l|}
     \hline
-        Vozlišča & vsi grafi & s\_r & s1\_r & r\_a & sa\_r & ra\_a & ~ \\ \hline
-        2 & 1 & 1 & 1 & 1 & 1 & 1 & ~ \\ \hline
-        3 & 4 & 3 & 3 & 3 & 3 & 3 & ~ \\ \hline
-        4 & 38 & 34 & 34 & 34 & 34 & 34 & ~ \\ \hline
-        5 & 728 & 665 & 665 & 665 & 662 & 671 & ~ \\ \hline
-        6 & 26704 & 23180 & 23447 & 23757 & 22857 & 24001 & ~ \\ \hline
-        7 & 1866256 & 1400511 & 1460570 & 1489036 & 1477953 & 1426328 & ~ \\ \hline
+        s\_r & r\_a & sa\_r & ra\_a & Vozlišča & ~ \\ \hline
+        1 & 1 & 1 & 1 & 2 & ~ \\ \hline
+        3 & 3 & 3 & 3 & 3 & ~ \\ \hline
+        34 & 34 & 34 & 34 & 4 & ~ \\ \hline
+        665 & 665 & 662 & 671 & 5 & ~ \\ \hline
+        23447 & 23757 & 22857 & 24001 & 6 & ~ \\ \hline
+        1460570 & 1489036 & 1477953 & 1426328 & 7 & ~ \\ \hline
     \end{tabular}
 \end{table}
 
 
 
-\section{Optimalno pozicioniranje na tržišču}
+
+
+
+Optimalno pozicioniranje na tržišču. 
 
 Pri igri vsoto smo uporabili dva podobna algritma za iskanje ravnovesja.
 Oba algoritma delujeta tako, da prva točka v grafu optimizira svoj položaj glede na stanje ostalih točk nato druga točka po vrsti optimizira svoj položaj.
 V kolikor se je graf spremenil ponono prva točka optimizira svoj položaj glede na novo nastalo stanje, sicer pa je na vrsti tretja točka.
 Torej točke po vrsti optimizirajo svoj položaj in ob vsaki spremembi grafa se vrstni red ponovno začne pri prvi točki.
 Algoritma se razlikujeta le po temu, da eden izmed algoritmov poišče ravnovesni graf za igro vsote za grafe v prostoru
-(cena povezave je evklidska razdalja med točkama zaokrožena na 3 decimalna mesta) drugi pa za grafe, kjer je cena vsake povezave enaka $1$.
+(cena povezave je evklidska razdalja med točkami) drugi pa za grafe, kjer je cena vsake povezave enaka $1$.
 
 Algoritme smo testirali na $100000$ naključno generiranih grafih za drevesne grafe z vozlišči od $3$ do $10$.
 Zanimalo nas je s kakšno verjetnostjo zmaga graf glede na svojo pozicijo v vrstnem redu igranja, glede na začetno število povezav,
@@ -858,245 +888,109 @@ glede na začetno ceno in glede na centralnost pozicije v prostoru.
 
 Iz teorije že vemo, da bo pri grafih kjer so vse povezave enake $1$ le en zmagovalec(z najcenejšo ceno med vozlišči) saj bo graf zvezda.
 Testiranje za grafe v prostoru pa je pokazalo, da je pri vseh grafih z lihim številom vozlišč po le en zmagovalec (z najcenejšo ceno med vozlišči).
-Tako je za vsa liha števila vozlišč po $100000$ zmagovalcev v $100000$ igrah.
-\item Za grafe s sodimi vozlišči pa je situacija nekoliko drugačna.
-\item Za grafe z $10$ vozlišči smo dobili $113222$ zmagovalcev pri $100000$ naključnih grafih.
-\item Za grafe z $8$ vozlišči smo dobili $116603$ zmagovalcev.
-\item Za grafe z $6$ vozlišči smo dobili $125978$ zmagovalcev.
-\item Za grafe z $4$ vozlišči smo dobili $154551$ zmagovalcev.
+Za grafe s sodimi vozlišči pa je situacija nekoliko drugačna. Za grafe z $10$ vozlišči smo dobili $113222$ zmagovalcev pri $100000$ naključnih grafih.
+Za grafe z $8$ vozlišči smo dobili $116603$ zmagovalcev.
+Za grafe z $6$ vozlišči smo dobili $125978$ zmagovalcev.
+Za grafe z $4$ vozlišči smo dobili $154551$ zmagovalcev.
 
 Iz teorije prav tako vemo, da bo pri grafih kjer so vse povezave enake $1$ naš edini zmagovalec tudi imela največ povezav in ne le najnižjo ceno.
 Testiranje za grafe v prostoru pa je pokazalo, da imamo za grafe z $10$ vozlišči $94620$ zmagovalcev, ki imajo tudi največ povezav v ravnovesnem grafu, to je približno $\frac{94620}{113233}*100 = 83,562 \%$.
-\item Za grafe z $9$ vozlišči imamo $89655$ takšnih zmagovalcev, to je $\frac{89655}{100000}*100 = 89,655 \%$.
-\item Za grafe z $8$ vozlišči imamo $100732$ takšnih zmagovalcev, to je približno $\frac{100732}{116603}*100 = 86,389 \%$.
-\item Za grafe z $7$ vozlišči imamo $93568$ takšnih zmagovalcev, to je $\frac{93568}{100000}*100 = 93,568 \%$.
-\item Za grafe z $6$ vozlišči imamo $112051$ takšnih zmagovalcev, to je približno $\frac{112051}{125978}*100 = 88,945 \%$.
-\item Za grafe z $5$ vozlišči imamo $100000$ takšnih zmagovalcev, to je $\frac{100000}{100000}*100 = 100 \%$.
-\item Za grafe z $4$ vozlišči imamo $154551$ takšnih zmagovalcev, to je približno $\frac{154551}{154551}*100 = 100 \%$.
-\item Za grafe z $3$ vozlišči imamo $100000$ takšnih zmagovalcev, to je $\frac{100000}{100000}*100 = 100 \%$.
-
-Tako odstotek zmagovalcev grafov s sodim številom vozlišč kot odstotek zmagovalcev grafov z lihim številom vozlišč pada s povečevanjem števil vozlišč.
-Vendar vidimo, da je še vedno velika korelacija med največjim številom povezav in zmagovalcem.
-\begin{table}[h]
-    \centering
-    \begin{tabular}{|c|c|c|}
-    \hline
-    \textbf{Število vozlišč} & \textbf{Število zmagovalcev} & \textbf{Procent zmagovalcev} \\ \hline
-    10 & 94620 & 83,562 \\ \hline
-    9 & 89655 & 89,655 \\ \hline
-    8 & 100732 & 86,389 \\ \hline
-    7 & 93568 & 93,568 \\ \hline
-    6 & 112051 & 88,945 \\ \hline
-    5 & 100000 & 100 \\ \hline
-    4 & 154551 & 100 \\ \hline
-    3 & 100000 & 100 \\ \hline
-    \end{tabular}
-    \caption{Število zmagovalcev z največ povezav}
-    \label{tab:winners}
-\end{table}
-    
+Za grafe z $9$ vozlišči imamo $89655$ takšnih zmagovalcev, to je $\frac{89655}{100000}*100 = 89,655 \%$.
+Za grafe z $8$ vozlišči imamo $100732$ takšnih zmagovalcev, to je približno $\frac{100732}{116603}*100 = 86,389 \%$.
+Za grafe z $7$ vozlišči imamo $93568$ takšnih zmagovalcev, to je $\frac{93568}{100000}*100 = 93,568 \%$.
+Za grafe z $6$ vozlišči imamo $112051$ takšnih zmagovalcev, to je približno $\frac{112051}{125978}*100 = 83,56 \%$.
+Za grafe z $5$ vozlišči imamo $100000$ takšnih zmagovalcev, to je $\frac{100000}{100000}*100 = 100 \%$.
+Za grafe z $4$ vozlišči imamo $154551$ takšnih zmagovalcev, to je približno $\frac{154551}{154551}*100 = 100 \%$.
+Za grafe z $3$ vozlišči imamo $100000$ takšnih zmagovalcev, to je $\frac{100000}{100000}*100 = 100 \%$.
 
 
 Zanimalo nas je tudi kako pogosto so vozlišča z največ povezavami na začetku postala zmagovalna vozlišča.
 Testiranje za grafe kjer so vse povezave enake $1$ je dalo sledeče rezultate.
-\item Za grafe z $10$ vozlišči je $72313$ vozlišč zmagalo po tem, ko je imelo na začetku največje število povezav, to je približno $\frac{72313}{100000}*100 = 72,313 \%$.
-\item Za grafe z $9$ vozlišči imamo $72841$ takšnih vozlišč, to je $\frac{72841}{100000}*100 = 72,841 \%$.
-\item Za grafe z $8$ vozlišči imamo $76813$ takšnih vozlišč, to je $\frac{76813}{100000}*100 = 76,813 \%$.
-\item Za grafe z $7$ vozlišči imamo $80178$ takšnih vozlišč, to je $\frac{80178}{100000}*100 = 80,178 \%$.
-\item Za grafe z $6$ vozlišči imamo $86408$ takšnih vozlišč, to je $\frac{86408}{100000}*100 = 86,408 \%$.
-\item Za grafe z $5$ vozlišči imamo $100000$ takšnih vozlišč, to je $\frac{100000}{100000}*100 = 100 \%$.
-\item Za grafe z $4$ vozlišči imamo $100000$ takšnih vozlišč, to je $\frac{100000}{100000}*100 = 100 \%$.
-\item Za grafe z $3$ vozlišči imamo $100000$ takšnih vozlišč, to je $\frac{100000}{100000}*100 = 100 \%$.
-
-Vozlišča z največjim številom povezav na začetku zmagaj v veliki večini primerov, vendar ta verjetnost pada s povečevanjem števila vozlišč.
-\begin{table}[h]
-    \centering
-    \begin{tabular}{|c|c|c|}
-    \hline
-    \textbf{Število vozlišč} & \textbf{Število zmagovalcev} & \textbf{Procent zmagovalcev} \\ \hline
-    10 & 72313 & 72,313 \\ \hline
-    9 & 72841 & 72,841 \\ \hline
-    8 & 76813 & 76,813 \\ \hline
-    7 & 80178 & 80,178 \\ \hline
-    6 & 86408 & 86,408 \\ \hline
-    5 & 100000 & 100 \\ \hline
-    4 & 100000 & 100 \\ \hline
-    3 & 100000 & 100 \\ \hline
-    \end{tabular}
-    \caption{Število zmagovalcev, ki je imelo na začetku največ povezav}
-    \label{tab:winners}
-\end{table}
-
+Za grafe z $10$ vozlišči je $72313$ vozlišč zmagalo po tem, ko je imelo na začetku največje število povezav, to je približno $\frac{72313}{100000}*100 = 72,313 \%$.
+Za grafe z $9$ vozlišči imamo $72841$ takšnih vozlišč, to je $\frac{72841}{100000}*100 = 72,841 \%$.
+Za grafe z $8$ vozlišči imamo $76813$ takšnih vozlišč, to je $\frac{76813}{100000}*100 = 76,813 \%$.
+Za grafe z $7$ vozlišči imamo $80178$ takšnih vozlišč, to je $\frac{80178}{100000}*100 = 80,178 \%$.
+Za grafe z $6$ vozlišči imamo $86408$ takšnih vozlišč, to je $\frac{86408}{100000}*100 = 86,408 \%$.
+Za grafe z $5$ vozlišči imamo $100000$ takšnih vozlišč, to je $\frac{100000}{100000}*100 = 100 \%$.
+Za grafe z $4$ vozlišči imamo $100000$ takšnih vozlišč, to je $\frac{100000}{100000}*100 = 100 \%$.
+Za grafe z $3$ vozlišči imamo $100000$ takšnih vozlišč, to je $\frac{100000}{100000}*100 = 100 \%$.
 
 Testiranje za grafe v prostoru pa je podalo sledeče rezultate.
-\item Za grafe z $10$ vozlišči je $21984$ vozlišč zmagalo po tem, ko je imelo na začetku največje število povezav, to je približno $\frac{21984}{113233}*100 = 19,415 \%$.
-\item Za grafe z $9$ vozlišči imamo $21102$ takšnih vozlišč, to je $\frac{21102}{100000}*100 = 21,102 \%$.
-\item Za grafe z $8$ vozlišči imamo $27172$ takšnih vozlišč, to je približno $\frac{27172}{116603}*100 = 23,303 \%$.
-\item Za grafe z $7$ vozlišči imamo $27380$ takšnih vozlišč, to je $\frac{27380}{100000}*100 = 27,380 \%$.
-\item Za grafe z $6$ vozlišči imamo $41503$ takšnih vozlišč, to je približno $\frac{41503}{125978}*100 = 32,945 \%$.
-\item Za grafe z $5$ vozlišči imamo $40602$ takšnih vozlišč, to je $\frac{40602}{100000}*100 = 40,602 \%$.
-\item Za grafe z $4$ vozlišči imamo $68532$ takšnih vozlišč, to je približno $\frac{68532}{154551}*100 = 44,343 \%$.
-\item Za grafe z $3$ vozlišči imamo $33533$ takšnih vozlišč, to je $\frac{33533}{100000}*100 = 33,533 \%$.
+Za grafe z $10$ vozlišči je $21984$ vozlišč zmagalo po tem, ko je imelo na začetku največje število povezav, to je približno $\frac{21984}{113233}*100 = 19,415 \%$.
+Za grafe z $9$ vozlišči imamo $21102$ takšnih vozlišč, to je $\frac{21102}{100000}*100 = 21,102 \%$.
+Za grafe z $8$ vozlišči imamo $27172$ takšnih vozlišč, to je približno $\frac{27172}{116603}*100 = 23,303 \%$.
+Za grafe z $7$ vozlišči imamo $27380$ takšnih vozlišč, to je $\frac{27380}{100000}*100 = 27,380 \%$.
+Za grafe z $6$ vozlišči imamo $41503$ takšnih vozlišč, to je približno $\frac{41503}{125978}*100 = 32,945 \%$.
+Za grafe z $5$ vozlišči imamo $40602$ takšnih vozlišč, to je $\frac{40602}{100000}*100 = 40,602 \%$.
+Za grafe z $4$ vozlišči imamo $68532$ takšnih vozlišč, to je približno $\frac{68532}{154551}*100 = 44,343 \%$.
+Za grafe z $3$ vozlišči imamo $33533$ takšnih vozlišč, to je $\frac{33533}{100000}*100 = 33,533 \%$.
 
-Za grafe v prostoru vidimo, da ima začetno število povezav veliko manjši vpliv na zmago kot pri grafih z ceno povezav enako $1$.
-
-
-\begin{table}[h]
-    \centering
-    \begin{tabular}{|c|c|c|}
-    \hline
-    \textbf{Število vozlišč} & \textbf{Število zmagovalcev} & \textbf{Procent zmagovalcev} \\ \hline
-    9 & 21102 & 21,102 \\ \hline
-    8 & 27172 & približno 23,303 \\ \hline
-    7 & 27380 & 27,380 \\ \hline
-    6 & 41503 & približno 32,945 \\ \hline
-    5 & 40602 & 40,602 \\ \hline
-    4 & 68532 & približno 44,343 \\ \hline
-    3 & 33533 & 33,533 \\ \hline
-    \end{tabular}
-    \caption{Število zmagovalcev, ki je imelo na začetku največ povezav}
-    \label{tab:winners}
-\end{table}
 
 
 
 Zanimalo nas je tudi kako pogosto so vozlišča z najmanjšo začetno ceno postala zmagovalna vozlišča.
 Testiranje za grafe kjer so vse povezave enake $1$ je dalo sledeče rezultate.
-\item Za grafe z $10$ vozlišči je $70317$ vozlišč zmagalo po tem, ko je imelo na začetku največje število povezav, to je približno $\frac{70317}{100000}*100 = 72,313 \%$.
-\item Za grafe z $9$ vozlišči imamo $54692$ takšnih vozlišč, to je $\frac{54692}{100000}*100 = 54,692 \%$.
-\item Za grafe z $8$ vozlišči imamo $76225$ takšnih vozlišč, to je $\frac{76225}{100000}*100 = 76,225 \%$.
-\item Za grafe z $7$ vozlišči imamo $57105$ takšnih vozlišč, to je $\frac{57105}{100000}*100 = 57,105 \%$.
-\item Za grafe z $6$ vozlišči imamo $87578$ takšnih vozlišč, to je $\frac{87578}{100000}*100 = 87,578 \%$.
-\item Za grafe z $5$ vozlišči imamo $66467$ takšnih vozlišč, to je $\frac{66467}{100000}*100 = 66,467 \%$.
-\item Za grafe z $4$ vozlišči imamo $100000$ takšnih vozlišč, to je $\frac{100000}{100000}*100 = 100 \%$.
-\item Za grafe z $3$ vozlišči imamo $100000$ takšnih vozlišč, to je $\frac{100000}{100000}*100 = 100 \%$.
-
-Vozlišča z najmanjšo začetno ceno so večkrat postala zmagovalna vozlišča kot ostala vozlišča,
-vendar je ta prednost veliko izrazitejša pri grafih s sodim številom vozlišč.
-
-\begin{table}[h]
-    \centering
-    \begin{tabular}{|c|c|c|}
-    \hline
-    \textbf{Število vozlišč} & \textbf{Število zmagovalcev} & \textbf{Procent zmagovalcev} \\ \hline
-    10 & 70317 & 72,317 \% \\ \hline
-    9 & 54692 & 54,692 \% \\ \hline
-    8 & 76225 & 76,225 \% \\ \hline
-    7 & 57105 & 57,105 \% \\ \hline
-    6 & 87578 & 87,578 \% \\ \hline
-    5 & 66467 & 66,467 \% \\ \hline
-    4 & 100000 & 100 \% \\ \hline
-    3 & 100000 & 100 \% \\ \hline
-    \end{tabular}
-    \caption{Število zmagovalcev z najmanjšo začetno ceno 1}
-    \label{tab:winners}
-\end{table}
-
+Za grafe z $10$ vozlišči je $70317$ vozlišč zmagalo po tem, ko je imelo na začetku največje število povezav, to je približno $\frac{70317}{100000}*100 = 72,313 \%$.
+Za grafe z $9$ vozlišči imamo $54692$ takšnih vozlišč, to je $\frac{54692}{100000}*100 = 54,692 \%$.
+Za grafe z $8$ vozlišči imamo $76225$ takšnih vozlišč, to je $\frac{76225}{100000}*100 = 76,225 \%$.
+Za grafe z $7$ vozlišči imamo $57105$ takšnih vozlišč, to je $\frac{57105}{100000}*100 = 57,105 \%$.
+Za grafe z $6$ vozlišči imamo $87578$ takšnih vozlišč, to je $\frac{87578}{100000}*100 = 87,578 \%$.
+Za grafe z $5$ vozlišči imamo $66467$ takšnih vozlišč, to je $\frac{66467}{100000}*100 = 66,467 \%$.
+Za grafe z $4$ vozlišči imamo $100000$ takšnih vozlišč, to je $\frac{100000}{100000}*100 = 100 \%$.
+Za grafe z $3$ vozlišči imamo $100000$ takšnih vozlišč, to je $\frac{100000}{100000}*100 = 100 \%$.
 
 Testiranje za grafe v prostoru pa je podalo sledeče rezultate.
-\item Za grafe z $10$ vozlišči je $15780$ vozlišč zmagalo po tem, ko je imelo na začetku največje število povezav, to je približno $\frac{15780}{113233}*100 = 13,936 \%$.
-\item Za grafe z $9$ vozlišči imamo $12450$ takšnih vozlišč, to je $\frac{12450}{100000}*100 = 12,450 \%$.
-\item Za grafe z $8$ vozlišči imamo $20827$ takšnih vozlišč, to je približno $\frac{20827}{116603}*100 = 17,861 \%$.
-\item Za grafe z $7$ vozlišči imamo $15407$ takšnih vozlišč, to je $\frac{15407}{100000}*100 = 15,407 \%$.
-\item Za grafe z $6$ vozlišči imamo $31393$ takšnih vozlišč, to je približno $\frac{31393}{125978}*100 = 24,919 \%$.
-\item Za grafe z $5$ vozlišči imamo $20855$ takšnih vozlišč, to je $\frac{20855}{100000}*100 = 20,855 \%$.
-\item Za grafe z $4$ vozlišči imamo $68532$ takšnih vozlišč, to je približno $\frac{68532}{154551}*100 = 44,343 \%$.
-\item Za grafe z $3$ vozlišči imamo $33533$ takšnih vozlišč, to je $\frac{33533}{100000}*100 = 33,533 \%$.
+Za grafe z $10$ vozlišči je $15780$ vozlišč zmagalo po tem, ko je imelo na začetku največje število povezav, to je približno $\frac{15780}{113233}*100 = 13,936 \%$.
+Za grafe z $9$ vozlišči imamo $12450$ takšnih vozlišč, to je $\frac{12450}{100000}*100 = 12,450 \%$.
+Za grafe z $8$ vozlišči imamo $20827$ takšnih vozlišč, to je približno $\frac{20827}{116603}*100 = 17,861 \%$.
+Za grafe z $7$ vozlišči imamo $15407$ takšnih vozlišč, to je $\frac{15407}{100000}*100 = 15,407 \%$.
+Za grafe z $6$ vozlišči imamo $31393$ takšnih vozlišč, to je približno $\frac{31393}{125978}*100 = 24,919 \%$.
+Za grafe z $5$ vozlišči imamo $20855$ takšnih vozlišč, to je $\frac{20855}{100000}*100 = 20,855 \%$.
+Za grafe z $4$ vozlišči imamo $68532$ takšnih vozlišč, to je približno $\frac{68532}{154551}*100 = 44,343 \%$.
+Za grafe z $3$ vozlišči imamo $33533$ takšnih vozlišč, to je $\frac{33533}{100000}*100 = 33,533 \%$.
 
-Za grafe v prostoru je to veliko manj pomembno pri določanju zmagovalca vendar vseeno ponuja rahlo prednost.
 
-\begin{table}[h]
-    \centering
-    \begin{tabular}{|c|c|c|}
-    \hline
-    \textbf{Število vozlišč} & \textbf{Število zmagovalcev} & \textbf{Procent zmagovalcev} \\ \hline
-    10 & 15780 & približno 13,936 \\ \hline
-    9 & 12450 & 12,450 \\ \hline
-    8 & 20827 & približno 17,861 \\ \hline
-    7 & 15407 & 15,407 \\ \hline
-    6 & 31393 & približno 24,919 \\ \hline
-    5 & 20855 & 20,855 \\ \hline
-    4 & 68532 & približno 44,343 \\ \hline
-    3 & 33533 & 33,533 \\ \hline
-    \end{tabular}
-    \caption{Število zmagovalcev z najmanjšo začetno ceno p}
-    \label{tab:winners}
-\end{table}
+
 
 
 Zanimalo nas je tudi kako pogosto so vozlišča z najmanjšo možno končno ceno postala zmagovalna vozlišča.
 Za grafe kjer so vse povezave enake $1$ so vsa vozlišča takšna saj imajo vsa teoretično možnost imeti strošek $n-1$.
 Testiranje za grafe v prostoru pa je podalo sledeče rezultate.
-\item Za grafe z $10$ vozlišči je zmagalo $76295$ vozlišč, ki so imela najmanjšo možno končno ceno, to je približno $\frac{76295}{113233}*100 = 67,379 \%$.
-\item Za grafe z $9$ vozlišči imamo $74767$ takšnih vozlišč, to je $\frac{74767}{100000}*100 = 74,767 \%$.
-\item Za grafe z $8$ vozlišči imamo $80006$ takšnih vozlišč, to je približno $\frac{80006}{116603}*100 = 68,614 \%$.
-\item Za grafe z $7$ vozlišči imamo $78229$ takšnih vozlišč, to je $\frac{78229}{100000}*100 = 78,229 \%$.
-\item Za grafe z $6$ vozlišči imamo $85553$ takšnih vozlišč, to je približno $\frac{85553}{125978}*100 = 67,911 \%$.
-\item Za grafe z $5$ vozlišči imamo $85374$ takšnih vozlišč, to je $\frac{85374}{100000}*100 = 85,374 \%$.
-\item Za grafe z $4$ vozlišči imamo $96570$ takšnih vozlišč, to je približno $\frac{96570}{154551}*100 = 62,484 \%$.
-\item Za grafe z $3$ vozlišči imamo $99888$ takšnih vozlišč, to je $\frac{99888}{100000}*100 = 99,888 \%$.
+Za grafe z $10$ vozlišči je zmagalo $76295$ vozlišč, ki so imela najmanjšo možno končno ceno, to je približno $\frac{76295}{113233}*100 = 67,379 \%$.
+Za grafe z $9$ vozlišči imamo $74767$ takšnih vozlišč, to je $\frac{74767}{100000}*100 = 74,767 \%$.
+Za grafe z $8$ vozlišči imamo $80006$ takšnih vozlišč, to je približno $\frac{80006}{116603}*100 = 68,614 \%$.
+Za grafe z $7$ vozlišči imamo $78229$ takšnih vozlišč, to je $\frac{78229}{100000}*100 = 78,229 \%$.
+Za grafe z $6$ vozlišči imamo $85553$ takšnih vozlišč, to je približno $\frac{85553}{125978}*100 = 67,911 \%$.
+Za grafe z $5$ vozlišči imamo $85374$ takšnih vozlišč, to je $\frac{85374}{100000}*100 = 85,374 \%$.
+Za grafe z $4$ vozlišči imamo $96570$ takšnih vozlišč, to je približno $\frac{96570}{154551}*100 = 62,484 \%$.
+Za grafe z $3$ vozlišči imamo $99888$ takšnih vozlišč, to je $\frac{99888}{100000}*100 = 99,888 \%$.
 %% preverit za 3 anomalije
 
-Najmanjša možna cena vozlišča je bila lep predikator za zmago vozlišča.
 
-\begin{table}[h]
+
+
+
+\begin{figure}[ht]
     \centering
-    \begin{tabular}{|c|c|c|}
-    \hline
-    \textbf{Število vozlišč} & \textbf{Število zmagovalcev} & \textbf{Procent zmagovalcev} \\ \hline
-    10 & 76295 & približno 67,379 \\ \hline
-    9 & 74767 & 74,767 \\ \hline
-    8 & 80006 & približno 68,614 \\ \hline
-    7 & 78229 & 78,229 \\ \hline
-    6 & 85553 & približno 67,911 \\ \hline
-    5 & 85374 & 85,374 \\ \hline
-    4 & 96570 & približno 62,484 \\ \hline
-    3 & 99888 & 99,888 \\ \hline
-    \end{tabular}
-    \caption{Število zmagovalcev z centralno pozicijo}
-    \label{tab:winners}
-\end{table}
-
-Do anomalijo pri grafih s $3$ vozlišči je najverjetneje prišlo zaradi zaokroževanja.
-
-
-Pri grafih z vsemi povezavami enakimi $1$ vidimo, da imajo pri uporabljenem algoritmu $2.$ in $3.$ vozlišče prednost pred ostalimi vozlišči.
-\begin{table}[!ht]
-    \centering
-    \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
-    \hline
-        8,6\% & 10,9\% & 11,8\% & 11,6\% & 10,9\% & 10,5\% & 9,7\% & 9,2\% & 8,7\% & 8,2\% \\ \hline
-        11,0\% & 13,2\% & 14,0\% & 12,3\% & 11,3\% & 10,8\% & 9,7\% & 9,1\% & 8,5\% & ~ \\ \hline
-        9,6\% & 14,3\% & 14,5\% & 14,0\% & 13,1\% & 12,3\% & 11,5\% & 10,6\% & ~ & ~ \\ \hline
-        13,1\% & 16,9\% & 16,7\% & 15,3\% & 14,1\% & 12,6\% & 11,3\% & ~ & ~ & ~ \\ \hline
-        15,0\% & 19,8\% & 17,8\% & 16,6\% & 15,9\% & 14,9\% & ~ & ~ & ~ & ~ \\ \hline
-        15,3\% & 24,6\% & 23,4\% & 19,9\% & 16,8\% & ~ & ~ & ~ & ~ & ~ \\ \hline
-        25,1\% & 24,9\% & 25,0\% & 25,0\% & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
-        33,2\% & 33,3\% & 33,5\% & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
-    \end{tabular}
-\end{table}
-
-
-Z grafe v prostoru vidimo, da je številka oziroma vrstni red vozlišča za dan algoritem zanemarljiva pri iskanju zmagovalca.
-\begin{table}[!ht]
-    \centering
-    \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
-    \hline
-        10,1\% & 10,1\% & 10,2\% & 10,2\% & 10,2\% & 9,9\% & 9,8\% & 10,0\% & 9,9\% & 9,6\% \\ \hline
-        11,1\% & 11,2\% & 11,2\% & 11,2\% & 11,1\% & 11,1\% & 11,1\% & 10,9\% & 11,1\% & ~ \\ \hline
-        12,6\% & 12,6\% & 12,5\% & 12,6\% & 12,6\% & 12,5\% & 12,3\% & 12,4\% & ~ & ~ \\ \hline
-        14,0\% & 14,2\% & 14,2\% & 14,5\% & 14,2\% & 14,3\% & 14,5\% & ~ & ~ & ~ \\ \hline
-        16,6\% & 16,7\% & 16,9\% & 16,7\% & 16,5\% & 16,7\% & ~ & ~ & ~ & ~ \\ \hline
-        19,6\% & 20,1\% & 20,1\% & 19,9\% & 20,3\% & ~ & ~ & ~ & ~ & ~ \\ \hline
-        24,9\% & 24,9\% & 25,0\% & 25,2\% & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
-        33,5\% & 33,4\% & 33,1\% & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
-    \end{tabular}
-\end{table}
-
-
-
-
-
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            bar width=15pt,
+            ylabel={Values},
+            xlabel={Index},
+            xtick={0, 1, 2, 3, 4, 5, 6, 7, 8, 9},
+            xticklabels={0, 1, 2, 3, 4, 5, 6, 7, 8, 9},
+            nodes near coords,
+            ymin=10000,
+            ymax=11600,
+            enlarge x limits={abs=0.5cm}
+        ]
+        \addplot coordinates {(0, 11490) (1, 11486) (2, 11505) (3, 11501) (4, 11527) (5, 11232) (6, 11141) (7, 11281) (8, 11196) (9, 10874)};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Histogram of Given Data}
+    \label{fig:histogram}
+\end{figure}
 
 
 

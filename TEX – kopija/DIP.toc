@@ -1,0 +1,12 @@
+\babel@toc {slovene}{}\relax 
+\contentsline {section}{\numberline {1}Uvod}{7}{section.1}%
+\contentsline {section}{\numberline {2}Teoretična podlaga}{7}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Osnovne definicije}{7}{subsection.2.1}%
+\contentsline {section}{\numberline {3}Igra}{8}{section.3}%
+\contentsline {section}{\numberline {4}Ravnovesje}{8}{section.4}%
+\contentsline {section}{\numberline {5}Cena anarhije in cena stabilnosti}{9}{section.5}%
+\contentsline {section}{\numberline {6}Teoretični del diplomske naloge}{9}{section.6}%
+\contentsline {section}{\numberline {7}Testiranje}{15}{section.7}%
+\contentsline {section}{\numberline {8}Algoritmi}{16}{section.8}%
+\contentsline {section}{\numberline {9}Optimalno pozicioniranje na tržišču}{17}{section.9}%
+\contentsline {section}{\numberline {10}Zaključek}{20}{section.10}%
