@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.4.3)  5 AUG 2024 15:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.4.3)  5 AUG 2024 15:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -638,8 +638,7 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count321
 \l__pdf_internal_box=\box65
-)
-No file Diploma_.aux.
+) (Diploma_.aux)
 \openout1 = `Diploma_.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 84.
@@ -660,7 +659,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 84.
 LaTeX Font Info:    ... okay on input line 84.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 84.
 LaTeX Font Info:    ... okay on input line 84.
-(C:\Users\peter\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+ (C:\Users\peter\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count322
 \scratchdimen=\dimen277
@@ -2048,10 +2047,10 @@ Package rerunfilecheck Info: Checksums for `Diploma_.out':
 (rerunfilecheck)             After:  DFE7CB7A763B40DDECAB48DCEF41F34F;1111.
  ) 
 Here is how much of TeX's memory you used:
- 35638 strings out of 474486
- 802747 string characters out of 5743756
+ 35641 strings out of 474486
+ 802816 string characters out of 5743756
  1974542 words of memory out of 5000000
- 57183 multiletter control sequences out of 15000+600000
+ 57184 multiletter control sequences out of 15000+600000
  642667 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,11n,107p,741b,2555s stack positions out of 10000i,1000n,20000p,200000b,200000s
